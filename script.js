@@ -15,7 +15,7 @@
         delay: 0.5,
         translateY:-100
     })
-    tl.from("#page1 h1, #page1 p, #page1 #page1-somthing, #page1 button, #page1 #moving-div", {
+    tl.from("#page1 #heading-area, #page1 h1, #page1 p, #page1 #page1-somthing, #page1 button, #page1 #moving-div", {
         opacity: 0,
         duration: 0.5,
         stagger: 0.2
