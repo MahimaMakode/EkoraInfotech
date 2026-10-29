@@ -248,6 +248,7 @@ nav h1 {
     position: relative;
     padding: 30px;
     overflow: hidden;
+    opacity: 0;
     /* z-index: 0; */
 }
 
