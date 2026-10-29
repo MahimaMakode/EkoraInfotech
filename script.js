@@ -78,20 +78,21 @@ var tl = gsap.timeline({
 });
 
 tl.to(".h-box", {
-    top:"613%",
+    top: "613%",
     left: "0%",
-    x:-320,
-    y:20,
+    x: -320,
+    y: 20,
     scale: 0.5,
-    rotate:"20deg",
+    rotate: "20deg",
     ease: "none"
 
 }, 0);
 
 tl.to("#page2 .about-us-section", {
-     background:"linear-gradient(105deg,rgb(0, 0, 0),rgba(40, 40, 40, 0.676),rgb(0, 0, 0))",
-         border: "1px solid rgb(188, 188, 188)",
+    background: "linear-gradient(105deg,rgb(0, 0, 0),rgba(40, 40, 40, 0.676),rgb(0, 0, 0))",
+    border: "1px solid rgb(188, 188, 188)",
     borderRadius: "5px",
+    opacity:1,
     // background: "linear-gradient(90deg,#3c2eff,#695fff,#07006f)",
     ease: "none"
 }, 0.2);
