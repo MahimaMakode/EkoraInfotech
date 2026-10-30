@@ -493,7 +493,7 @@ nav h1 {
 
 .div2 {
     grid-row: span 2;
-    background-image: url("assets/e\ commerce.jpg");
+    background-image: url("assets/public/e\ commerce.jpg");
     /* background: linear-gradient(30deg, rgba(0, 13, 128, 0.74), rgba(10, 10, 10, 0.486), rgba(0, 0, 0, 0.829)), url("photos/e\ commerce.png"); */
 
     background-size: cover;
