@@ -482,7 +482,7 @@ nav h1 {
 
 .div1 {
     grid-row: span 3 / span 3;
-    background-image: url("photos/webdevelopment.jpg");
+    background-image: url("assets/webdevelopment.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
