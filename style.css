@@ -493,7 +493,7 @@ nav h1 {
 
 .div2 {
     grid-row: span 2;
-    background-image: url("photos/e\ commerce.jpg");
+    background-image: url("assets/e\ commerce.jpg");
     /* background: linear-gradient(30deg, rgba(0, 13, 128, 0.74), rgba(10, 10, 10, 0.486), rgba(0, 0, 0, 0.829)), url("photos/e\ commerce.png"); */
 
     background-size: cover;
@@ -504,7 +504,7 @@ nav h1 {
 .div3 {
     grid-column-start: 2;
     grid-row-start: 3;
-    background-image: url("photos/mobile\ app.jpg");
+    background-image: url("assets/mobile\ app.jpg");
     /* background: linear-gradient(30deg, rgba(0, 13, 128, 0.74), rgba(10, 10, 10, 0.486), rgba(0, 0, 0, 0.829)), url("photos/mobile\ app.png"); */
 
     background-size: cover;
@@ -515,7 +515,7 @@ nav h1 {
 .div4 {
     grid-column-start: 3;
     grid-row-start: 1;
-    background-image: url("photos/custom\ software.jpg");
+    background-image: url("assets/custom\ software.jpg");
     /* background: linear-gradient(30deg, rgba(0, 13, 128, 0.74), rgba(10, 10, 10, 0.486), rgba(0, 0, 0, 0.829)), url("photos/custom\ software.png"); */
 
     background-size: cover;
@@ -527,7 +527,7 @@ nav h1 {
     grid-row: span 2 / span 2;
     grid-column-start: 3;
     grid-row-start: 2;
-    background-image: url("photos/crm.jpg");
+    background-image: url("assets/crm.jpg");
     /* background: linear-gradient(30deg, rgba(0, 13, 128, 0.74), rgba(10, 10, 10, 0.486), rgba(0, 0, 0, 0.829)), url("photos/crm.png"); */
 
     background-size: cover;
@@ -539,7 +539,7 @@ nav h1 {
     grid-column: span 2 / span 2;
     grid-column-start: 1;
     grid-row-start: 4;
-    background-image: url("photos/ai\ ml.jpg");
+    background-image: url("assets/ai\ ml.jpg");
     /* background: linear-gradient(30deg, rgba(0, 13, 128, 0.74), rgba(10, 10, 10, 0.486), rgba(0, 0, 0, 0.829)), url("photos/ai\ ml.png"); */
 
     background-size: cover;
@@ -551,7 +551,7 @@ nav h1 {
     grid-row: span 2 / span 2;
     grid-column-start: 3;
     grid-row-start: 4;
-    background-image: url("photos/api.jpg");
+    background-image: url("assets/api.jpg");
     /* background: linear-gradient(30deg, rgba(0, 13, 128, 0.74), rgba(10, 10, 10, 0.486), rgba(0, 0, 0, 0.829)), url("photos/api.png"); */
 
     background-size: cover;
@@ -562,7 +562,7 @@ nav h1 {
 .div8 {
     grid-column-start: 1;
     grid-row-start: 5;
-    background-image: url("photos/ui.jpg");
+    background-image: url("assets/ui.jpg");
     /* background: linear-gradient(30deg, rgba(0, 13, 128, 0.74), rgba(10, 10, 10, 0.486), rgba(0, 0, 0, 0.829)), url("photos/ui.png"); */
 
     background-size: cover;
@@ -573,7 +573,7 @@ nav h1 {
 .div9 {
     grid-column-start: 2;
     grid-row-start: 5;
-    background-image: url("photos/cloud.jpg");
+    background-image: url("assets/cloud.jpg");
     /* background: linear-gradient(30deg, rgba(0, 13, 128, 0.74), rgba(10, 10, 10, 0.486), rgba(0, 0, 0, 0.829)), url("photos/cloud.png"); */
 
     background-size: cover;
@@ -585,7 +585,7 @@ nav h1 {
     grid-row: span 2 / span 2;
     grid-column-start: 4;
     grid-row-start: 1;
-    background-image: url("photos/cyber\ security.jpg");
+    background-image: url("assets/cyber\ security.jpg");
     /* background: linear-gradient(30deg, rgba(0, 13, 128, 0.74), rgba(10, 10, 10, 0.486), rgba(0, 0, 0, 0.829)), url("photos/cyber\ security.png"); */
 
     background-size: cover;
@@ -597,7 +597,7 @@ nav h1 {
     grid-row: span 2 / span 2;
     grid-column-start: 5;
     grid-row-start: 1;
-    background-image: url("photos/blockchain.jpg");
+    background-image: url("assets/blockchain.jpg");
     /* background: linear-gradient(30deg, rgba(0, 13, 128, 0.74), rgba(10, 10, 10, 0.486), rgba(0, 0, 0, 0.829)), url("photos/blockchain.png"); */
 
     background-size: cover;
@@ -608,7 +608,7 @@ nav h1 {
 .div13 {
     grid-column-start: 4;
     grid-row-start: 3;
-    background-image: url("photos/wordpress.jpg");
+    background-image: url("assets/wordpress.jpg");
     /* background: linear-gradient(30deg, rgba(0, 13, 128, 0.74), rgba(10, 10, 10, 0.486), rgba(0, 0, 0, 0.829)), url("photos/wordpress.png"); */
 
     background-size: cover;
@@ -619,7 +619,7 @@ nav h1 {
 .div14 {
     grid-column-start: 4;
     grid-row-start: 4;
-    background-image: url("photos/maintanance.jpg");
+    background-image: url("assets/maintanance.jpg");
     /* background: linear-gradient(30deg, rgba(0, 13, 128, 0.74), rgba(10, 10, 10, 0.486), rgba(0, 0, 0, 0.829)), url("photos/maintanance.png"); */
 
     background-size: cover;
@@ -631,7 +631,7 @@ nav h1 {
     grid-column: span 2 / span 2;
     grid-column-start: 4;
     grid-row-start: 5;
-    background-image: url("photos/graphics.jpg");
+    background-image: url("assets/graphics.jpg");
     /* background: linear-gradient(30deg, rgba(0, 13, 128, 0.74), rgba(10, 10, 10, 0.486), rgba(0, 0, 0, 0.829)), url("photos/graphics.png"); */
     background-size: cover;
     background-position: center;
@@ -642,7 +642,7 @@ nav h1 {
     grid-row: span 2 / span 2;
     grid-column-start: 5;
     grid-row-start: 3;
-    background-image: url("photos/domain.jpg");
+    background-image: url("assets/domain.jpg");
     /* background: linear-gradient(30deg, rgba(0, 13, 128, 0.74), rgba(10, 10, 10, 0.486), rgba(0, 0, 0, 0.829)), url("photos/domain.png"); */
     background-size: cover;
     background-position: center;
