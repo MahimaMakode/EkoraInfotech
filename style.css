@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: gilroy;
-    color: white;
+    /* color: white; */
 }
 
 html,
@@ -22,6 +22,7 @@ nav {
     padding: 2vw 10.4vw;
     justify-content: space-between;
     background-color: #111;
+    color: white;
     z-index: 10;
 }
 
@@ -61,6 +62,7 @@ nav h1 {
 
 .primary-btn {
     background-color: #07006f;
+    color: white;
     display: flex;
     align-items: center;
     padding: 10px 20px;
@@ -92,12 +94,13 @@ nav h1 {
     width: 100%;
     height: 100vh;
     background-color: #111;
+    color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     position: relative;
-        z-index: 2;
+    z-index: 2;
     overflow: visible;
 }
 
@@ -225,6 +228,7 @@ nav h1 {
     width: 100%;
     height: 100vh;
     background: #000000;
+    color: white;
     position: relative;
     overflow: hidden;
     display: flex;
@@ -232,9 +236,9 @@ nav h1 {
     /* z-index: 0; */
     position: relative;
     z-index: 1;
-         /* background:linear-gradient(105deg,rgb(0, 0, 0),rgba(40, 40, 40, 0.676),rgb(0, 0, 0)); */
- 
-   
+    /* background:linear-gradient(105deg,rgb(0, 0, 0),rgba(40, 40, 40, 0.676),rgb(0, 0, 0)); */
+
+
 }
 
 
@@ -424,76 +428,249 @@ nav h1 {
     line-height: 1.5;
 }
 
+#page3 {
+    width: 100%;
+    height: auto;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    padding: 20px;
+}
 
-@media (max-width: 900px) {
-    #page2.about-us-section-area {
-        padding: 60px 5%;
-    }
+.page3-heading {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+}
 
-    #page2 .about-header {
-        flex-direction: column;
-        margin-bottom: 40px;
-    }
+.page3-heading h2 {
+    font-size: 45px;
+    line-height: 1.2;
+    font-weight: 900;
+    letter-spacing: -1px;
+    margin: 10px 0;
+}
 
-    #page2 .about-description {
-        text-align: left;
-        max-width: 550px;
-    }
-
-    #page2 .stats-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 18px;
-    }
-
-    #page2 .card-two,
-    #page2 .card-four {
-        margin-top: 45px;
-    }
-
-    #page2 .stat-card {
-        height: 300px;
-    }
+.page3-heading h2 span {
+    color: #4e42f9;
+}
+.page3-p{
+    color: #818181;
+    font-size: 17px;
 }
 
 
-@media (max-width: 520px) {
-    #page2.about-us-section-area {
-        padding: 45px 20px;
-    }
+.parent {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 8px;
+    width: 100%;
+    height: 70vh;
+    /* background-color: pink; */
+}
 
-    #page2 .about-heading h2 {
-        font-size: 27px;
-    }
+.gr {
+    /* background-color: red; */
+    border: 1px solid #2b2b2b;
+    border-radius: 10px;
+}
 
-    #page2 .stats-grid {
-        gap: 12px;
-    }
 
-    #page2 .stat-card {
-        height: 245px;
-        padding: 12px;
-    }
+.div1 {
+    grid-row: span 3 / span 3;
+    background-image: url("photos/webdevelopment.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+}
 
-    #page2 .image-wrap {
-        height: 110px;
-    }
 
-    #page2 .image-icon {
-        width: 32px;
-        height: 32px;
-        font-size: 18px;
-    }
+.div2 {
+    grid-row: span 2;
+    background-image: url("photos/e\ commerce.jpg");
+    /* background: linear-gradient(30deg, rgba(0, 13, 128, 0.74), rgba(10, 10, 10, 0.486), rgba(0, 0, 0, 0.829)), url("photos/e\ commerce.png"); */
 
-    #page2 .stat-content h3 {
-        font-size: 27px;
-    }
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
-    #page2 .stat-content p {
-        font-size: 12px;
-    }
+.div3 {
+    grid-column-start: 2;
+    grid-row-start: 3;
+    background-image: url("photos/mobile\ app.jpg");
+    /* background: linear-gradient(30deg, rgba(0, 13, 128, 0.74), rgba(10, 10, 10, 0.486), rgba(0, 0, 0, 0.829)), url("photos/mobile\ app.png"); */
 
-    #page2 .card-two,
-    #page2 .card-four {
-        margin-top: 35px;
-    }
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.div4 {
+    grid-column-start: 3;
+    grid-row-start: 1;
+    background-image: url("photos/custom\ software.jpg");
+    /* background: linear-gradient(30deg, rgba(0, 13, 128, 0.74), rgba(10, 10, 10, 0.486), rgba(0, 0, 0, 0.829)), url("photos/custom\ software.png"); */
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.div5 {
+    grid-row: span 2 / span 2;
+    grid-column-start: 3;
+    grid-row-start: 2;
+    background-image: url("photos/crm.jpg");
+    /* background: linear-gradient(30deg, rgba(0, 13, 128, 0.74), rgba(10, 10, 10, 0.486), rgba(0, 0, 0, 0.829)), url("photos/crm.png"); */
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.div6 {
+    grid-column: span 2 / span 2;
+    grid-column-start: 1;
+    grid-row-start: 4;
+    background-image: url("photos/ai\ ml.jpg");
+    /* background: linear-gradient(30deg, rgba(0, 13, 128, 0.74), rgba(10, 10, 10, 0.486), rgba(0, 0, 0, 0.829)), url("photos/ai\ ml.png"); */
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.div7 {
+    grid-row: span 2 / span 2;
+    grid-column-start: 3;
+    grid-row-start: 4;
+    background-image: url("photos/api.jpg");
+    /* background: linear-gradient(30deg, rgba(0, 13, 128, 0.74), rgba(10, 10, 10, 0.486), rgba(0, 0, 0, 0.829)), url("photos/api.png"); */
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.div8 {
+    grid-column-start: 1;
+    grid-row-start: 5;
+    background-image: url("photos/ui.jpg");
+    /* background: linear-gradient(30deg, rgba(0, 13, 128, 0.74), rgba(10, 10, 10, 0.486), rgba(0, 0, 0, 0.829)), url("photos/ui.png"); */
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.div9 {
+    grid-column-start: 2;
+    grid-row-start: 5;
+    background-image: url("photos/cloud.jpg");
+    /* background: linear-gradient(30deg, rgba(0, 13, 128, 0.74), rgba(10, 10, 10, 0.486), rgba(0, 0, 0, 0.829)), url("photos/cloud.png"); */
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.div11 {
+    grid-row: span 2 / span 2;
+    grid-column-start: 4;
+    grid-row-start: 1;
+    background-image: url("photos/cyber\ security.jpg");
+    /* background: linear-gradient(30deg, rgba(0, 13, 128, 0.74), rgba(10, 10, 10, 0.486), rgba(0, 0, 0, 0.829)), url("photos/cyber\ security.png"); */
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.div12 {
+    grid-row: span 2 / span 2;
+    grid-column-start: 5;
+    grid-row-start: 1;
+    background-image: url("photos/blockchain.jpg");
+    /* background: linear-gradient(30deg, rgba(0, 13, 128, 0.74), rgba(10, 10, 10, 0.486), rgba(0, 0, 0, 0.829)), url("photos/blockchain.png"); */
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.div13 {
+    grid-column-start: 4;
+    grid-row-start: 3;
+    background-image: url("photos/wordpress.jpg");
+    /* background: linear-gradient(30deg, rgba(0, 13, 128, 0.74), rgba(10, 10, 10, 0.486), rgba(0, 0, 0, 0.829)), url("photos/wordpress.png"); */
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.div14 {
+    grid-column-start: 4;
+    grid-row-start: 4;
+    background-image: url("photos/maintanance.jpg");
+    /* background: linear-gradient(30deg, rgba(0, 13, 128, 0.74), rgba(10, 10, 10, 0.486), rgba(0, 0, 0, 0.829)), url("photos/maintanance.png"); */
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.div15 {
+    grid-column: span 2 / span 2;
+    grid-column-start: 4;
+    grid-row-start: 5;
+    background-image: url("photos/graphics.jpg");
+    /* background: linear-gradient(30deg, rgba(0, 13, 128, 0.74), rgba(10, 10, 10, 0.486), rgba(0, 0, 0, 0.829)), url("photos/graphics.png"); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.div17 {
+    grid-row: span 2 / span 2;
+    grid-column-start: 5;
+    grid-row-start: 3;
+    background-image: url("photos/domain.jpg");
+    /* background: linear-gradient(30deg, rgba(0, 13, 128, 0.74), rgba(10, 10, 10, 0.486), rgba(0, 0, 0, 0.829)), url("photos/domain.png"); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.gr {
+    position: relative;
+    overflow: hidden;
+}
+
+.gr::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        360deg,
+        rgba(0, 13, 128, 0.74),
+        rgba(10, 10, 10, 0.308),
+        rgba(0, 0, 0, 0.829)
+    );
+
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+    pointer-events: none;
+}
+
+.gr:hover::before {
+    opacity: 1;
 }
