@@ -89,11 +89,10 @@ tl.to(".h-box", {
 }, 0);
 
 tl.to("#page2 .about-us-section", {
-    background: "linear-gradient(105deg,rgb(0, 0, 0),rgba(40, 40, 40, 0.676),rgb(0, 0, 0))",
+    // background: "linear-gradient(105deg,rgb(0, 0, 0),rgba(40, 40, 40, 0.676),rgb(0, 0, 0))",
     border: "1px solid rgb(188, 188, 188)",
     borderRadius: "5px",
     opacity:1,
-    // background: "linear-gradient(90deg,#3c2eff,#695fff,#07006f)",
     ease: "none"
 }, 0.2);
 
