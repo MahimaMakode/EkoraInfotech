@@ -11,6 +11,8 @@
 </head>
 
 <body>
+    <canvas id="starCanvas" aria-hidden="true"></canvas>
+
     <nav>
         <h1>EKORA INFOTECH</h1>
         <div class="nav-part2">
@@ -65,7 +67,7 @@
 
     </nav>
 
-    <div id="mian">
+    <div id="main">
         <div id="page1" class="hero-section">
             <div id="heading-area">
                 <h1>WE BUILD </h1>
@@ -199,87 +201,91 @@
 
 
 
-<div id="page3" class="section services-section">
+        <div id="page3" class="section services-section">
 
-    <div class="page3-heading">
-        <p class="about-label">— Our Services —</p>
-        <h2>Technology That Drives <span>Your <br> Business</span> Forward.</h2>
-        <p class="page3-p">
-            Innovative technology solutions designed to move your business forward.
-        </p>
-    </div>
+            <div class="page3-heading">
+                <p class="about-label">— Our Services —</p>
+                <h2>Technology That Drives <span>Your <br> Business</span> Forward.</h2>
+                <p class="page3-p">
+                    Innovative technology solutions designed to move your business forward.
+                </p>
+            </div>
 
-    <div class="services-top">
-        <div>
-            <span class="services-label">EXPLORE OUR EXPERTISE</span>
-            <h3>Flexible solutions for a digital world.</h3>
-        </div>
-
-        <div class="services-controls">
-            <button id="servicePrev" aria-label="Previous services">
-                <i class="ri-arrow-left-line"></i>
-            </button>
-            <button id="serviceNext" aria-label="Next services">
-                <i class="ri-arrow-right-line"></i>
-            </button>
-        </div>
-    </div>
-
-    <!-- Horizontal services track -->
-    <div class="services-track" id="servicesTrack">
-        <div class="services-list" id="servicesList"></div>
-    </div>
-
-    <div class="services-bottom">
-        <span>15 DIGITAL SERVICES</span>
-        <span>HOVER TO EXPLORE <i class="ri-arrow-right-up-line"></i></span>
-    </div>
-
-    <!-- Landscape Details Popup -->
-    <div class="service-overlay" id="serviceOverlay">
-
-        <div class="service-popup">
-
-            <button class="close-service" id="closeService">
-                <i class="ri-close-line"></i>
-            </button>
-
-            <div class="popup-left">
-                <div class="popup-icon">
-                    <i id="popupIcon"></i>
+            <div class="services-top">
+                <div>
+                    <span class="services-label">EXPLORE OUR EXPERTISE</span>
+                    <h3>Flexible solutions for a digital world.</h3>
                 </div>
 
-                <span class="popup-number" id="popupNumber"></span>
-                <h2 id="popupTitle"></h2>
-                <p id="popupDescription"></p>
-
-                <div class="popup-tech" id="popupTech"></div>
+                <div class="services-controls">
+                    <button id="servicePrev" aria-label="Previous services">
+                        <i class="ri-arrow-left-line"></i>
+                    </button>
+                    <button id="serviceNext" aria-label="Next services">
+                        <i class="ri-arrow-right-line"></i>
+                    </button>
+                </div>
             </div>
 
-            <div class="popup-right">
-                <span class="popup-small-heading">
-                    WHAT WE OFFER
-                </span>
-
-                <h3>Everything you need to grow digitally.</h3>
-
-                <ul id="popupList"></ul>
-
-                <button class="schedule-btn">
-                    Schedule Meeting
-                    <i class="ri-arrow-up-right-line"></i>
-                </button>
+            <!-- Horizontal services track -->
+            <div class="services-track" id="servicesTrack">
+                <div class="services-list" id="servicesList"></div>
             </div>
+
+            <div class="services-bottom">
+                <span>15 DIGITAL SERVICES</span>
+                <span>HOVER TO EXPLORE <i class="ri-arrow-right-up-line"></i></span>
+            </div>
+
+            <!-- Landscape Details Popup -->
+            <div class="service-overlay" id="serviceOverlay">
+
+                <div class="service-popup">
+
+                    <button class="close-service" id="closeService">
+                        <i class="ri-close-line"></i>
+                    </button>
+
+                    <div class="popup-left">
+                        <div class="popup-icon">
+                            <i id="popupIcon"></i>
+                        </div>
+
+                        <span class="popup-number" id="popupNumber"></span>
+                        <h2 id="popupTitle"></h2>
+                        <p id="popupDescription"></p>
+
+                        <div class="popup-tech" id="popupTech"></div>
+                    </div>
+
+                    <div class="popup-right">
+                        <span class="popup-small-heading">
+                            WHAT WE OFFER
+                        </span>
+
+                        <h3>Everything you need to grow digitally.</h3>
+
+                        <ul id="popupList"></ul>
+
+                        <button class="schedule-btn">
+                            Schedule Meeting
+                            <i class="ri-arrow-up-right-line"></i>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+            </section>
+
+
+
 
         </div>
-    </div>
-
-</section>
-
-
 
 
     </div>
+
 
 
 
@@ -289,7 +295,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
         integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <script src="script.js"></script>
+    <script src="cursor.js"></script>
 </body>
 
 </html>
