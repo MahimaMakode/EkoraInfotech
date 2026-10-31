@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 
@@ -195,44 +196,93 @@
                 </div>
             </div>
         </div>
-        <div id="page3" class="section">
-            <div class="page3-heading">
-                <p class="about-label"> — Our Services —</p>
-                <h2>Technology That Drives <span>Your Business</span> Forward.</h2>
-                <p class="page3-p">From innovative ideas to powerful digital experiences, we help businesses turn technology into growth.</p>
-            </div>
-            <div class="parent">
-                <div class="div1 gr">
-                    <div class="div-inner-area">
-                        <i class="ri-code-s-slash-fill"></i>
-                        <h3>Web Development</h3>
-                        <p>Fast, accessible websites built around your business goals.</p>
-                        <div class="div-btn-area">
-                            <h3>React</h3>
-                            <h3>Type Script</h3>
-                        </div>
 
-                    </div>
+
+
+<section id="page3" class="section services-section">
+
+    <div class="page3-heading">
+        <p class="about-label">— Our Services —</p>
+        <h2>Technology That Drives <span>Your <br> Business</span> Forward.</h2>
+        <p class="page3-p">
+            Innovative technology solutions designed to move your business forward.
+        </p>
+    </div>
+
+    <div class="services-top">
+        <div>
+            <span class="services-label">EXPLORE OUR EXPERTISE</span>
+            <h3>Flexible solutions for a digital world.</h3>
+        </div>
+
+        <div class="services-controls">
+            <button id="servicePrev" aria-label="Previous services">
+                <i class="ri-arrow-left-line"></i>
+            </button>
+            <button id="serviceNext" aria-label="Next services">
+                <i class="ri-arrow-right-line"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Horizontal services track -->
+    <div class="services-track" id="servicesTrack">
+        <div class="services-list" id="servicesList"></div>
+    </div>
+
+    <div class="services-bottom">
+        <span>15 DIGITAL SERVICES</span>
+        <span>HOVER TO EXPLORE <i class="ri-arrow-right-up-line"></i></span>
+    </div>
+
+    <!-- Landscape Details Popup -->
+    <div class="service-overlay" id="serviceOverlay">
+
+        <div class="service-popup">
+
+            <button class="close-service" id="closeService">
+                <i class="ri-close-line"></i>
+            </button>
+
+            <div class="popup-left">
+                <div class="popup-icon">
+                    <i id="popupIcon"></i>
                 </div>
-                <div class="div2 gr"></div>
-                <div class="div3 gr"></div>
-                <div class="div4 gr"></div>
-                <div class="div5 gr"></div>
-                <div class="div6 gr"></div>
-                <div class="div7 gr"></div>
-                <div class="div8 gr"></div>
-                <div class="div9 gr"></div>
-                <div class="div11 gr"></div>
-                <div class="div12 gr"></div>
-                <div class="div13 gr"></div>
-                <div class="div14 gr"></div>
-                <div class="div15 gr"></div>
-                <div class="div17 gr"></div>
+
+                <span class="popup-number" id="popupNumber"></span>
+                <h2 id="popupTitle"></h2>
+                <p id="popupDescription"></p>
+
+                <div class="popup-tech" id="popupTech"></div>
+            </div>
+
+            <div class="popup-right">
+                <span class="popup-small-heading">
+                    WHAT WE OFFER
+                </span>
+
+                <h3>Everything you need to grow digitally.</h3>
+
+                <ul id="popupList"></ul>
+
+                <button class="schedule-btn">
+                    Schedule Meeting
+                    <i class="ri-arrow-up-right-line"></i>
+                </button>
             </div>
 
         </div>
+    </div>
+
+</section>
+
+
+
 
     </div>
+
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
         integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
