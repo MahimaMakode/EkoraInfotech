@@ -435,6 +435,11 @@ nav h1 {
 
 
 
+
+/* =========================================
+   PAGE 3 - SERVICES SECTION
+========================================= */
+
 #page3 {
     width: 100%;
     min-height: 100vh;
@@ -443,6 +448,7 @@ nav h1 {
     color: #fff;
     overflow: hidden;
     position: relative;
+    font-family: inherit;
 }
 
 #page3::before {
@@ -458,8 +464,12 @@ nav h1 {
     pointer-events: none;
 }
 
+/* =========================================
+   HEADING
+========================================= */
 
 .page3-heading {
+    position: relative;
     text-align: center;
     margin-bottom: 65px;
 }
@@ -475,6 +485,7 @@ nav h1 {
     font-weight: 800;
     margin: 15px 0;
     letter-spacing: -2px;
+    line-height: 1.15;
 }
 
 .page3-heading h2 span {
@@ -484,11 +495,15 @@ nav h1 {
 .page3-p {
     color: #999;
     font-size: 15px;
+    line-height: 1.7;
 }
 
-/* TOP CONTENT */
+/* =========================================
+   SERVICES TOP
+========================================= */
 
 .services-top {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: end;
@@ -530,8 +545,12 @@ nav h1 {
     border-color: #5145ff;
 }
 
+/* =========================================
+   HORIZONTAL SERVICES TRACK
+========================================= */
 
 .services-track {
+    position: relative;
     width: 100%;
     height: 510px;
     overflow-x: auto;
@@ -549,12 +568,15 @@ nav h1 {
 .services-list {
     display: flex;
     align-items: stretch;
-    gap: 10px;
+    gap: 12px;
     width: max-content;
     height: 100%;
     padding: 5px 2px 15px;
 }
 
+/* =========================================
+   SERVICE CARD
+========================================= */
 
 .service-card {
     position: relative;
@@ -562,27 +584,134 @@ nav h1 {
     height: 100%;
     flex-shrink: 0;
     overflow: hidden;
+    isolation: isolate;
     border-radius: 13px;
     border: 1px solid #303030;
-    background:
-        radial-gradient(circle at top, rgba(81,69,255,.12), transparent 50%),
-        #17171b;
+    background: #17171b;
+    cursor: pointer;
+
     transition:
         width .65s cubic-bezier(.2,.8,.2,1),
-        border-color .4s ease,
-        background .4s ease;
-    cursor: pointer;
+        border-color .4s ease;
+}
+
+/* Background image layer */
+
+.service-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: .45;
+    transform: scale(1);
+    transition: transform .7s ease, opacity .5s ease;
+}
+
+/* Dark overlay for readability */
+
+.service-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(
+        180deg,
+        rgba(5,5,10,.35),
+        rgba(5,5,10,.65) 45%,
+        rgba(5,5,10,.96)
+    );
+    transition: background .5s ease;
 }
 
 .service-card:hover,
 .service-card:focus-within {
     width: 330px;
     border-color: #655bff;
-    background:
-        radial-gradient(circle at top left, rgba(81,69,255,.28), transparent 60%),
-        #19191f;
 }
 
+.service-card:hover::before,
+.service-card:focus-within::before {
+    opacity: .7;
+    transform: scale(1.08);
+}
+
+/* =========================================
+   DIFFERENT BACKGROUND IMAGE FOR EACH CARD
+
+   Apne image paths yahan set karna.
+========================================= */
+
+.service-card:nth-child(1)::before {
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKfvAnns7pHtUUKIm0REBLzUGSciWjxkTpDz008jEnCru8tjYyD7_I4bA&s=10");
+        opacity: 0;
+}
+.service-card:hover::before {
+    opacity: 1;
+    /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKfvAnns7pHtUUKIm0REBLzUGSciWjxkTpDz008jEnCru8tjYyD7_I4bA&s=10"); */
+}
+
+.service-card:nth-child(2)::before {
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKfvAnns7pHtUUKIm0REBLzUGSciWjxkTpDz008jEnCru8tjYyD7_I4bA&s=10");
+}
+
+.service-card:nth-child(3)::before {
+    background-image: url("assets/mobile-app.jpg");
+}
+
+.service-card:nth-child(4)::before {
+    background-image: url("assets/custom-software.jpg");
+}
+
+.service-card:nth-child(5)::before {
+    background-image: url("assets/crm.jpg");
+}
+
+.service-card:nth-child(6)::before {
+    background-image: url("assets/ai-automation.jpg");
+}
+
+.service-card:nth-child(7)::before {
+    background-image: url("assets/api.jpg");
+}
+
+.service-card:nth-child(8)::before {
+    background-image: url("assets/ui-ux.jpg");
+}
+
+.service-card:nth-child(9)::before {
+    background-image: url("assets/cloud.jpg");
+}
+
+.service-card:nth-child(10)::before {
+    background-image: url("assets/cyber-security.jpg");
+}
+
+.service-card:nth-child(11)::before {
+    background-image: url("assets/blockchain.jpg");
+}
+
+.service-card:nth-child(12)::before {
+    background-image: url("assets/wordpress.jpg");
+}
+
+.service-card:nth-child(13)::before {
+    background-image: url("assets/maintenance.jpg");
+}
+
+.service-card:nth-child(14)::before {
+    background-image: url("assets/graphics.jpg");
+}
+
+.service-card:nth-child(15)::before {
+    background-image: url("assets/domain.jpg");
+}
+
+/* =========================================
+   COLLAPSED CARD
+========================================= */
 
 .card-collapsed {
     position: absolute;
@@ -597,7 +726,7 @@ nav h1 {
 
 .card-number {
     font-size: 25px;
-    color: #777;
+    color: #aaa;
     font-weight: 300;
 }
 
@@ -606,8 +735,9 @@ nav h1 {
     transform: rotate(180deg);
     font-size: 15px;
     letter-spacing: 1px;
-    color: #c5c5c5;
+    color: #fff;
     white-space: nowrap;
+    text-shadow: 0 2px 8px #000;
 }
 
 .card-arrow {
@@ -615,17 +745,23 @@ nav h1 {
     font-size: 20px;
 }
 
+/* =========================================
+   EXPANDED CARD CONTENT
+========================================= */
 
 .card-expanded {
     position: absolute;
     inset: 0;
+    z-index: 2;
     padding: 25px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+
     opacity: 0;
     visibility: hidden;
     transform: translateY(15px);
+
     transition: .4s ease;
     pointer-events: none;
 }
@@ -644,24 +780,33 @@ nav h1 {
     visibility: hidden;
 }
 
+/* Icon */
+
 .card-icon {
     font-size: 30px;
-    color: #756cff;
+    color: #8178ff;
     margin-bottom: 20px;
 }
+
+/* Title */
 
 .card-expanded h3 {
     font-size: 23px;
     line-height: 1.2;
     margin-bottom: 12px;
+    color: #fff;
 }
 
+/* Description */
+
 .card-expanded p {
-    color: #aaa;
+    color: #e0e0e0;
     font-size: 13px;
     line-height: 1.7;
     margin-bottom: 18px;
 }
+
+/* Technologies */
 
 .card-tech {
     display: flex;
@@ -673,12 +818,14 @@ nav h1 {
 .card-tech span,
 .popup-tech span {
     padding: 7px 12px;
-    border: 1px solid #454545;
+    border: 1px solid rgba(255,255,255,.25);
     border-radius: 30px;
-    background: rgba(255,255,255,.05);
-    color: #ddd;
+    background: rgba(0,0,0,.4);
+    color: #fff;
     font-size: 11px;
 }
+
+/* Explore button */
 
 .explore-btn {
     width: 100%;
@@ -704,9 +851,12 @@ nav h1 {
     font-size: 17px;
 }
 
-
+/* =========================================
+   BOTTOM DETAILS
+========================================= */
 
 .services-bottom {
+    position: relative;
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
@@ -715,7 +865,9 @@ nav h1 {
     letter-spacing: 2px;
 }
 
-
+/* =========================================
+   SERVICE POPUP OVERLAY
+========================================= */
 
 .service-overlay {
     position: fixed;
@@ -741,20 +893,28 @@ nav h1 {
     pointer-events: auto;
 }
 
+/* Popup box */
+
 .service-popup {
     position: relative;
     width: min(1050px, 95vw);
     min-height: 390px;
+
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 50px;
+
     padding: 55px;
 
     border: 1px solid rgba(105,95,255,.5);
     border-radius: 20px;
 
     background:
-        radial-gradient(circle at 10% 15%, rgba(81,69,255,.22), transparent 45%),
+        radial-gradient(
+            circle at 10% 15%,
+            rgba(81,69,255,.22),
+            transparent 45%
+        ),
         linear-gradient(135deg, #202027, #0d0d12);
 
     box-shadow: 0 0 80px rgba(81,69,255,.18);
@@ -766,6 +926,8 @@ nav h1 {
 .service-overlay.active .service-popup {
     transform: translateY(0) scale(1);
 }
+
+/* Close button */
 
 .close-service {
     position: absolute;
@@ -786,6 +948,8 @@ nav h1 {
     background: #5145ff;
     transform: rotate(90deg);
 }
+
+/* Popup left */
 
 .popup-left {
     display: flex;
@@ -827,12 +991,16 @@ nav h1 {
     line-height: 1.8;
 }
 
+/* Popup technologies */
+
 .popup-tech {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
     margin-top: 22px;
 }
+
+/* Popup right */
 
 .popup-right {
     display: flex;
@@ -867,6 +1035,8 @@ nav h1 {
     color: #756cff;
 }
 
+/* Schedule meeting */
+
 .schedule-btn {
     align-self: flex-end;
     margin-top: 25px;
@@ -890,9 +1060,9 @@ nav h1 {
     margin-left: 10px;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* =========================================
+   TABLET RESPONSIVE
+========================================= */
 
 @media(max-width: 768px) {
 
@@ -947,7 +1117,23 @@ nav h1 {
     }
 }
 
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
 @media(max-width: 480px) {
+
+    #page3 {
+        padding: 45px 14px;
+    }
+
+    .page3-heading h2 {
+        letter-spacing: -1px;
+    }
+
+    .services-top {
+        align-items: flex-end;
+    }
 
     .services-top h3 {
         font-size: 19px;
@@ -958,22 +1144,54 @@ nav h1 {
         height: 38px;
     }
 
+    .services-track {
+        height: 410px;
+    }
+
+    .service-card {
+        width: 65px;
+    }
+
+    .service-card:hover,
+    .service-card:focus-within {
+        width: 260px;
+    }
+
+    .card-expanded {
+        padding: 18px;
+    }
+
+    .card-expanded h3 {
+        font-size: 19px;
+    }
+
     .services-bottom {
         font-size: 9px;
         letter-spacing: 1px;
     }
 
-    .services-track {
-        height: 410px;
+    .service-popup {
+        padding: 35px 20px;
+    }
+
+    .popup-left h2 {
+        font-size: 25px;
     }
 }
 
-@media (prefers-reduced-motion: reduce) {
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media(prefers-reduced-motion: reduce) {
+
     .services-track {
         scroll-behavior: auto;
     }
 
     .service-card,
+    .service-card::before,
+    .service-card::after,
     .service-popup,
     .service-overlay {
         transition: none;
