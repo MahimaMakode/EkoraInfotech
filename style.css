@@ -107,6 +107,10 @@ nav h1 {
     position: relative;
     z-index: 2;
     overflow: visible;
+    background-image: url(assets/images/hero-bg.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 #heading-area {
@@ -182,6 +186,8 @@ nav h1 {
     padding: 1.2vw;
     overflow: hidden;
     width: 44%;
+    border: 1px solid rgba(0, 6, 97, 0.5);
+    border-radius: 90px;
 
 }
 
@@ -212,7 +218,7 @@ nav h1 {
 #blur-left {
     height: 100%;
     width: 20%;
-    background: linear-gradient(to right, #111, transparent);
+    background: linear-gradient(to right, #02005e, transparent);
     position: absolute;
     top: 0;
     left: 0;
@@ -222,7 +228,7 @@ nav h1 {
 #blur-right {
     height: 100%;
     width: 20%;
-    background: linear-gradient(to right, transparent, #111);
+    background: linear-gradient(to left, #02005e, transparent);
     position: absolute;
     top: 0;
     right: 0;
@@ -232,8 +238,9 @@ nav h1 {
 #page2 {
     width: 100%;
     height: 100vh;
-    background: #000000;
+
     color: white;
+    background-color: black;
     position: relative;
     overflow: hidden;
     display: flex;
@@ -258,6 +265,10 @@ nav h1 {
     padding: 30px;
     overflow: hidden;
     opacity: 0;
+    background-image: url(assets/images/about-us\ bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     /* z-index: 0; */
 }
 
@@ -331,13 +342,17 @@ nav h1 {
     transition: background 0.4s ease,
         transform 0.4s ease;
 }
+.stat-card span{
+    color: rgb(38, 38, 255);
+    /* font-size: 70px; */
+}
 
 #page2 .card-one {
     margin-top: 0;
     background: linear-gradient(145deg,
-            #263126,
-            #20251d 65%,
-            #191a18);
+            #262731,
+            #1e1d25 65%,
+            #191850);
 }
 
 #page2 .card-two {
@@ -419,6 +434,7 @@ nav h1 {
     border-bottom: 1px solid #e0e0e0a0;
 }
 
+
 #page2 .stat-content h3 {
     font-size: clamp(28px, 2.5vw, 36px);
     margin: 0 0 8px;
@@ -433,12 +449,6 @@ nav h1 {
     line-height: 1.5;
 }
 
-
-
-
-/* =========================================
-   PAGE 3 - SERVICES SECTION
-========================================= */
 
 #page3 {
     width: 100%;
@@ -464,9 +474,6 @@ nav h1 {
     pointer-events: none;
 }
 
-/* =========================================
-   HEADING
-========================================= */
 
 .page3-heading {
     position: relative;
@@ -497,10 +504,6 @@ nav h1 {
     font-size: 15px;
     line-height: 1.7;
 }
-
-/* =========================================
-   SERVICES TOP
-========================================= */
 
 .services-top {
     position: relative;
@@ -545,10 +548,6 @@ nav h1 {
     border-color: #5145ff;
 }
 
-/* =========================================
-   HORIZONTAL SERVICES TRACK
-========================================= */
-
 .services-track {
     position: relative;
     width: 100%;
@@ -574,9 +573,6 @@ nav h1 {
     padding: 5px 2px 15px;
 }
 
-/* =========================================
-   SERVICE CARD
-========================================= */
 
 .service-card {
     position: relative;
@@ -595,7 +591,6 @@ nav h1 {
         border-color .4s ease;
 }
 
-/* Background image layer */
 
 .service-card::before {
     content: "";
@@ -610,7 +605,6 @@ nav h1 {
     transition: transform .7s ease, opacity .5s ease;
 }
 
-/* Dark overlay for readability */
 
 .service-card::after {
     content: "";
@@ -638,80 +632,87 @@ nav h1 {
     transform: scale(1.08);
 }
 
-/* =========================================
-   DIFFERENT BACKGROUND IMAGE FOR EACH CARD
 
-   Apne image paths yahan set karna.
-========================================= */
 
 .service-card:nth-child(1)::before {
-    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKfvAnns7pHtUUKIm0REBLzUGSciWjxkTpDz008jEnCru8tjYyD7_I4bA&s=10");
+    background-image: url(assets/images/website.png);
         opacity: 0;
-}
-.service-card:hover::before {
-    opacity: 1;
-    /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKfvAnns7pHtUUKIm0REBLzUGSciWjxkTpDz008jEnCru8tjYyD7_I4bA&s=10"); */
 }
 
 .service-card:nth-child(2)::before {
-    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKfvAnns7pHtUUKIm0REBLzUGSciWjxkTpDz008jEnCru8tjYyD7_I4bA&s=10");
+    background-image: url(assets/images/e\ commerce.png);
+    opacity: 0;
 }
 
 .service-card:nth-child(3)::before {
-    background-image: url("assets/mobile-app.jpg");
+    background-image: url(assets/images/mobile.png);
+     opacity: 0;
 }
 
 .service-card:nth-child(4)::before {
-    background-image: url("assets/custom-software.jpg");
+    background-image: url(assets/images/customsoftware.png);
+     opacity: 0;
 }
 
 .service-card:nth-child(5)::before {
-    background-image: url("assets/crm.jpg");
+    background-image: url(assets/images/crm.png);
+     opacity: 0;
 }
 
 .service-card:nth-child(6)::before {
-    background-image: url("assets/ai-automation.jpg");
+    background-image: url(assets/images/ai.png);
+     opacity: 0;
 }
 
 .service-card:nth-child(7)::before {
-    background-image: url("assets/api.jpg");
+    background-image: url(assets/images/api.png);
+     opacity: 0;
 }
 
 .service-card:nth-child(8)::before {
-    background-image: url("assets/ui-ux.jpg");
+    background-image: url(assets/images/ui.png);
+     opacity: 0;
 }
 
 .service-card:nth-child(9)::before {
-    background-image: url("assets/cloud.jpg");
+    background-image: url(assets/images/cloud.png);
+     opacity: 0;
 }
 
 .service-card:nth-child(10)::before {
-    background-image: url("assets/cyber-security.jpg");
+    background-image: url(assets/images/cyber.png);
+     opacity: 0;
 }
 
 .service-card:nth-child(11)::before {
-    background-image: url("assets/blockchain.jpg");
+    background-image: url(assets/images/blockchain.png);
+     opacity: 0;
 }
 
 .service-card:nth-child(12)::before {
-    background-image: url("assets/wordpress.jpg");
+    background-image: url(assets/images/wordpress.png);
+     opacity: 0;
 }
 
 .service-card:nth-child(13)::before {
-    background-image: url("assets/maintenance.jpg");
+    background-image: url(assets/images/msupport.png);
+     opacity: 0;
 }
 
 .service-card:nth-child(14)::before {
-    background-image: url("assets/graphics.jpg");
+    background-image: url(assets/images/graphic.png);
+     opacity: 0;
 }
 
 .service-card:nth-child(15)::before {
-    background-image: url("assets/domain.jpg");
+    background-image: url(assets/images/domain.png);
+     opacity: 0;
+}
+.service-card:hover::before {
+    opacity: 1;
+
 }
 
-/* =========================================
-   COLLAPSED CARD
-========================================= */
 
 .card-collapsed {
     position: absolute;
@@ -745,9 +746,6 @@ nav h1 {
     font-size: 20px;
 }
 
-/* =========================================
-   EXPANDED CARD CONTENT
-========================================= */
 
 .card-expanded {
     position: absolute;
@@ -757,6 +755,7 @@ nav h1 {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+
 
     opacity: 0;
     visibility: hidden;
@@ -778,41 +777,46 @@ nav h1 {
 .service-card:focus-within .card-collapsed {
     opacity: 0;
     visibility: hidden;
+    
 }
 
-/* Icon */
 
-.card-icon {
-    font-size: 30px;
-    color: #8178ff;
-    margin-bottom: 20px;
+.card-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    color: #5145ff;
+    margin-bottom: 12px;
+        width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: 1px solid #5145ff;
+    border-radius: 50px;
 }
 
-/* Title */
+
 
 .card-expanded h3 {
     font-size: 23px;
-    line-height: 1.2;
+    /* line-height: 1.2; */
     margin-bottom: 12px;
     color: #fff;
 }
 
-/* Description */
 
 .card-expanded p {
     color: #e0e0e0;
     font-size: 13px;
-    line-height: 1.7;
-    margin-bottom: 18px;
+    /* line-height: 1.7; */
+    margin-bottom: 12px;
 }
-
-/* Technologies */
 
 .card-tech {
     display: flex;
     flex-wrap: wrap;
     gap: 7px;
-    margin-bottom: 22px;
+    margin-bottom: 12px;
 }
 
 .card-tech span,
@@ -825,11 +829,9 @@ nav h1 {
     font-size: 11px;
 }
 
-/* Explore button */
-
 .explore-btn {
     width: 100%;
-    padding: 15px 12px;
+    padding: 10px 12px;
     background: #5145ff;
     color: white;
     border: none;
@@ -851,9 +853,6 @@ nav h1 {
     font-size: 17px;
 }
 
-/* =========================================
-   BOTTOM DETAILS
-========================================= */
 
 .services-bottom {
     position: relative;
@@ -865,9 +864,6 @@ nav h1 {
     letter-spacing: 2px;
 }
 
-/* =========================================
-   SERVICE POPUP OVERLAY
-========================================= */
 
 .service-overlay {
     position: fixed;
@@ -893,7 +889,6 @@ nav h1 {
     pointer-events: auto;
 }
 
-/* Popup box */
 
 .service-popup {
     position: relative;
@@ -927,7 +922,6 @@ nav h1 {
     transform: translateY(0) scale(1);
 }
 
-/* Close button */
 
 .close-service {
     position: absolute;
@@ -949,7 +943,6 @@ nav h1 {
     transform: rotate(90deg);
 }
 
-/* Popup left */
 
 .popup-left {
     display: flex;
@@ -991,7 +984,6 @@ nav h1 {
     line-height: 1.8;
 }
 
-/* Popup technologies */
 
 .popup-tech {
     display: flex;
@@ -1000,7 +992,6 @@ nav h1 {
     margin-top: 22px;
 }
 
-/* Popup right */
 
 .popup-right {
     display: flex;
@@ -1035,7 +1026,6 @@ nav h1 {
     color: #756cff;
 }
 
-/* Schedule meeting */
 
 .schedule-btn {
     align-self: flex-end;
@@ -1060,9 +1050,6 @@ nav h1 {
     margin-left: 10px;
 }
 
-/* =========================================
-   TABLET RESPONSIVE
-========================================= */
 
 @media(max-width: 768px) {
 
@@ -1117,9 +1104,7 @@ nav h1 {
     }
 }
 
-/* =========================================
-   MOBILE RESPONSIVE
-========================================= */
+
 
 @media(max-width: 480px) {
 
@@ -1179,9 +1164,6 @@ nav h1 {
     }
 }
 
-/* =========================================
-   REDUCED MOTION
-========================================= */
 
 @media(prefers-reduced-motion: reduce) {
 
