@@ -2,302 +2,219 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Ekora Infotech</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+  rel="stylesheet"
+>
 </head>
 
 <body>
-    <canvas id="starCanvas" aria-hidden="true"></canvas>
+  <main>
 
-    <nav>
-        <h1>EKORA INFOTECH</h1>
-        <div class="nav-part2">
-            <div class="nav-elem">
-                <h4>Case Studies</h4>
-                <h5><span>Case Studies</span></h5>
-            </div>
-            <div class="nav-elem">
-                <h4>Areas of experties</h4>
-                <h5><span>AI & ML</span></h5>
-                <h5><span>Fintech</span></h5>
-                <h5><span>Real Estate</span></h5>
-                <h5><span>E-commerce</span></h5>
-                <h5><span>Web 3</span></h5>
-            </div>
-            <div class="nav-elem">
-                <h4>UIUX Design</h4>
-                <h5><span>Fintech</span></h5>
-                <h5><span>Real Estate</span></h5>
-                <h5><span>E-commerce</span></h5>
-                <h5><span>Web 3</span></h5>
-            </div>
-            <div class="nav-elem">
-                <h4>PRoduct design</h4>
-                <h5><span>Fintech</span></h5>
-                <h5><span>Real Estate</span></h5>
-                <h5><span>E-commerce</span></h5>
-                <h5><span>Web 3</span></h5>
-            </div>
-            <div class="nav-elem">
-                <h4>Design Process</h4>
+    <!-- SECTION 1: HERO -->
+    <section class="hero" id="home">
 
-                <h5><span>E-commerce</span></h5>
-                <h5><span>Web 3</span></h5>
-            </div>
-            <div class="nav-elem">
-                <h4>About Agency</h4>
-                <h5><span>Fintech</span></h5>
-                <h5><span>Real Estate</span></h5>
-                <h5></h5>
-                <h5><span>Web 3</span></h5>
-            </div>
-        </div>
-        <button class="primary-btn">Let's Talk <svg fill="none" viewBox="0 0 20 20">
-                <path fill="#fff"
-                    d="M2.5 14.375V17.5h3.125l9.217-9.217-3.125-3.125L2.5 14.375Zm14.758-8.508a.83.83 0 0 0 0-1.175l-1.95-1.95a.83.83 0 0 0-1.175 0l-1.525 1.525 3.125 3.125 1.525-1.525Z">
-                </path>
-            </svg></button>
-        <div id="nav-bottom">
+      <!-- Replace this source with your background video -->
+      <video class="hero-video" id="hero-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+        <source src="assets/video/Hero Section animated video.mp4 (1).mp4" type="video/mp4">
+      </video>
 
+      <div class="hero-overlay"></div>
+
+      <!-- HEADER -->
+      <header class="header">
+
+        <!-- Replace this text mark with your logo image if needed -->
+        <a class="logo" href="#home" aria-label="Ekora home">
+          <img src="assets/images/ekoralogo.png" alt="">
+        </a>
+
+        <nav class="glass-menu" id="main-menu" aria-label="Main navigation">
+          <a href="#home" class="active" aria-current="location">HOME</a>
+          <a href="#about">ABOUT</a>
+          <a href="#pricing">PRICING</a>
+          <a href="feature">FEATURES</a>
+          <a href="faq">FAQ</a>
+        </nav>
+
+        <div class="header-actions">
+          <button class="button quote-button" data-dialog="Get a Quote">
+            Get a Quote
+          </button>
+
+          <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"
+            aria-controls="main-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
 
-    </nav>
+      </header>
 
-    <div id="main">
-        <div id="page1" class="hero-section">
-            <div id="heading-area">
-                <h1>WE BUILD </h1>
-                <span class="h-box"><i class="ri-code-s-slash-fill"></i></span>
-                <h1>DIGITAL</h1>
-            </div>
-            <h1>EXPERIENCES</h1>
-            <p>We turn ideas into powerful digital solutions through innovative <br> web development, mobile
-                applications, and creative technology.</p>
-            <div id="page1-somthing">
-                <h4>Web Development</h4>
-                <h4>App Development</h4>
-                <h4>and</h4>
-                <h4>IT Solutions</h4>
-            </div>
-            <button class="primary-btn pag1-btn">LET'S WORK TOGETHER<svg fill="none" viewBox="0 0 20 20">
-                    <path fill="#fff"
-                        d="M2.5 14.375V17.5h3.125l9.217-9.217-3.125-3.125L2.5 14.375Zm14.758-8.508a.83.83 0 0 0 0-1.175l-1.95-1.95a.83.83 0 0 0-1.175 0l-1.525 1.525 3.125 3.125 1.525-1.525Z">
-                    </path>
-                </svg></button>
+      <div class="hero-watermark" aria-hidden="true">EKORA</div>
 
-            <div id="moving-div">
-                <div id="blur-left"></div>
-                <div class="move">
-                    <img src="https://i.pinimg.com/736x/0e/a3/16/0ea316dbe0fd5dab21e160b3f48fa6b5.jpg" alt="">
-                    <img src="https://i.pinimg.com/736x/62/1f/21/621f21fa891b48023ff7c4dff12c7aa0.jpg" alt="">
-                    <img src="https://i.pinimg.com/736x/9e/c5/5f/9ec55f34a4c5f9aa84f0ebe30b5fb57e.jpg" alt="">
-                    <img src="https://i.pinimg.com/736x/ab/ac/76/abac76070febc2e0afb255ac7faa740c.jpg" alt="">
-                    <img src="https://i.pinimg.com/1200x/23/92/76/23927687feaba88157e0c3c8a3f3c775.jpg" alt="">
-                    <img src="https://i.pinimg.com/1200x/8d/0c/72/8d0c72f49aaa0a6a35d34c7b98035baa.jpg" alt="">
-                    <img src="https://i.pinimg.com/736x/8b/8c/fc/8b8cfc5c57dfd820ed3d4e0728fb9295.jpg" alt="">
-                    <img src="https://i.pinimg.com/236x/7e/a6/7d/7ea67df8f3ea706fdc9b493725fa0835.jpg" alt="">
-                </div>
-                <div class="move">
-                    <img src="https://i.pinimg.com/736x/0e/a3/16/0ea316dbe0fd5dab21e160b3f48fa6b5.jpg" alt="">
-                    <img src="https://i.pinimg.com/736x/62/1f/21/621f21fa891b48023ff7c4dff12c7aa0.jpg" alt="">
-                    <img src="https://i.pinimg.com/736x/9e/c5/5f/9ec55f34a4c5f9aa84f0ebe30b5fb57e.jpg" alt="">
-                    <img src="https://i.pinimg.com/736x/ab/ac/76/abac76070febc2e0afb255ac7faa740c.jpg" alt="">
-                    <img src="https://i.pinimg.com/1200x/23/92/76/23927687feaba88157e0c3c8a3f3c775.jpg" alt="">
-                    <img src="https://i.pinimg.com/1200x/8d/0c/72/8d0c72f49aaa0a6a35d34c7b98035baa.jpg" alt="">
-                    <img src="https://i.pinimg.com/736x/8b/8c/fc/8b8cfc5c57dfd820ed3d4e0728fb9295.jpg" alt="">
-                    <img src="https://i.pinimg.com/236x/7e/a6/7d/7ea67df8f3ea706fdc9b493725fa0835.jpg" alt="">
-                </div>
-                <div id="blur-right"></div>
+      <div class="hero-content">
 
+        <!-- Left content -->
+        <div class="hero-left">
+          <h1>
+            The future of <br>
+            music listening <br>
+            experience
+          </h1>
+
+          <!-- Reference statistics: replace with verified business data -->
+          <div class="reviews">
+            <div class="review-avatars" aria-hidden="true">
+              <img src="assets/images/review img 1.jpg" alt="">
+              <img src="assets/images/review img 2.jpg" alt="">
+              <img src="assets/images/review img 3.jpg" alt="">
             </div>
 
-
+            <div class="review-content">
+              <div class="stars" aria-hidden="true">★★★★★</div>
+              <p>4.5 Average ratings from 1200+ Clients</p>
+            </div>
+          </div>
         </div>
 
-        <div id="page2" class="about-us-section-area">
-            <div class="about-us-section">
+        <!-- Center image -->
+        <div class="hero-visual">
+          <div class="phone">
 
-                <div class="about-header">
-                    <div class="about-heading">
-                        <p class="about-label">— About Us —</p>
-                        <h2>
-                            CREATIVE STRATEGY FOR
-                            <span>UNIQUE BRANDS</span>
-                        </h2>
-                    </div>
 
-                    <p class="about-description">
-                        We combine design and strategy to help brands
-                        stand out. Our solutions turn ideas into experiences
-                        that connect, inspire, and leave a lasting impact.
-                    </p>
-                </div>
-
-                <div class="stats-grid">
-
-                    <div class="stat-card card-one">
-                        <div class="image-wrap">
-                            <img src="https://www.cio.com/wp-content/uploads/2025/01/432709-0-74334500-1737629382-software_development_team_coding_programming_strategy_thinkstock_853580100-100749662-orig.jpg?quality=50&strip=all&w=1024"
-                                alt="Our projects">
-                            <div class="image-icon">✦</div>
-                        </div>
-                        <div class="corner corner-top"></div>
-                        <div class="corner corner-bottom"></div>
-                        <div class="stat-content">
-                            <h3>100<span> +</span></h3>
-                            <p>Projects Completed</p>
-                        </div>
-                    </div>
-
-                    <div class="stat-card card-two">
-                        <div class="image-wrap">
-                            <img src="https://imageio.forbes.com/specials-images/imageserve/6304f084f1b2a53e1b12b49a/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds"
-                                alt="Our partners">
-                            <div class="image-icon">✧</div>
-                        </div>
-                        <div class="corner corner-top"></div>
-                        <div class="corner corner-bottom"></div>
-                        <div class="stat-content">
-                            <h3>90<span> +</span></h3>
-                            <p>Trusted Partners</p>
-                        </div>
-                    </div>
-
-                    <div class="stat-card card-three">
-                        <div class="image-wrap">
-                            <img src="https://vertassets.blob.core.windows.net/image/e7095e2d/e7095e2d-4eaa-479c-84f0-9d410d5315e2/375_250-books_of_compliance_and_regulations_gettyimages_1174513035.jpg"
-                                alt="Our guidelines">
-                            <div class="image-icon">◎</div>
-                        </div>
-                        <div class="corner corner-top"></div>
-                        <div class="corner corner-bottom"></div>
-                        <div class="stat-content">
-                            <h3>350<span> +</span></h3>
-                            <p>Guidelines Created</p>
-                        </div>
-                    </div>
-
-                    <div class="stat-card card-four">
-                        <div class="image-wrap">
-                            <img src="https://t3.ftcdn.net/jpg/14/11/73/58/360_F_1411735826_RJOAqaYJ30eF4Y7Y49tHboxa9AHKgtjS.jpg"
-                                alt="Our experience">
-                            <div class="image-icon">✺</div>
-                        </div>
-                        <div class="corner corner-top"></div>
-                        <div class="corner corner-bottom"></div>
-                        <div class="stat-content">
-                            <h3>08<span> +</span></h3>
-                            <p>Years of Experience</p>
-                        </div>
-                    </div>
-
-                </div>
+            <div class="phone-status" aria-hidden="true">
+              <span>9:41</span>
+              <span>••• ▰</span>
             </div>
+           
+          </div>
+
+          <span class="floating-tag tag-marketing">
+            Digital Marketing
+          </span>
+
+          <span class="floating-tag tag-web">
+            Web Design
+          </span>
+
+          <span class="floating-tag tag-seo">
+            SEO Marketing
+          </span>
         </div>
 
+        <!-- Right content -->
+        <div class="hero-right">
+          <p>
+            Redefines what a music app can be—transforming passive listening into an immersive, interactive
+            experience.
+          </p>
 
+          <button class="button" data-dialog="Start Free Trial">
+            Start Free Trial
+          </button>
+        </div>
 
-        <div id="page3" class="section services-section">
+      </div>
 
-            <div class="page3-heading">
-                <p class="about-label">— Our Services —</p>
-                <h2>Technology That Drives <span>Your <br> Business</span> Forward.</h2>
-                <p class="page3-p">
-                    Innovative technology solutions designed to move your business forward.
-                </p>
+    </section>
+
+    <!-- SECTION 2: ABOUT -->
+    <section class="about" id="about" aria-labelledby="about-heading">
+
+      <div class="about-top">
+
+        <div class="about-description">
+          <p class="section-label">
+            <span aria-hidden="true"></span>
+            About
+          </p>
+
+          <p class="about-copy">
+            Redefines what a music app can be—transforming
+            passive listening into an immersive, interactive
+            experience.
+          </p>
+
+          <button class="button about-button" data-dialog="About Us">
+            About us
+          </button>
+        </div>
+
+        <h2 id="about-heading">
+          Boring music apps? <span> Outta here!
+          Nebula spins your sound into
+          next-gen magic! </span>
+        </h2>
+
+      </div>
+
+      <div class="about-bottom">
+
+        <div class="about-left">
+
+          <!-- Replace this placeholder portrait -->
+          <img class="portrait-image"
+            src="assets/images/team img (2).jpg"
+            alt="Portrait of a smiling man" loading="lazy">
+
+          <!-- Replace these reference statistics with verified values -->
+          <div class="statistics">
+
+            <div class="stat">
+              <p class="stat-value">40<span>+</span></p>
+              <p class="stat-label">Years Of Experience</p>
             </div>
 
-            <div class="services-top">
-                <div>
-                    <span class="services-label">EXPLORE OUR EXPERTISE</span>
-                    <h3>Flexible solutions for a digital world.</h3>
-                </div>
-
-                <div class="services-controls">
-                    <button id="servicePrev" aria-label="Previous services">
-                        <i class="ri-arrow-left-line"></i>
-                    </button>
-                    <button id="serviceNext" aria-label="Next services">
-                        <i class="ri-arrow-right-line"></i>
-                    </button>
-                </div>
+            <div class="stat">
+              <p class="stat-value">5<span>+</span></p>
+              <p class="stat-label">Client’s Rating</p>
             </div>
 
-            <!-- Horizontal services track -->
-            <div class="services-track" id="servicesTrack">
-                <div class="services-list" id="servicesList"></div>
+            <div class="stat">
+              <p class="stat-value">120<span>+</span></p>
+              <p class="stat-label">Clients Worldwide</p>
             </div>
 
-            <div class="services-bottom">
-                <span>15 DIGITAL SERVICES</span>
-                <span>HOVER TO EXPLORE <i class="ri-arrow-right-up-line"></i></span>
-            </div>
-
-            <!-- Landscape Details Popup -->
-            <div class="service-overlay" id="serviceOverlay">
-
-                <div class="service-popup">
-
-                    <button class="close-service" id="closeService">
-                        <i class="ri-close-line"></i>
-                    </button>
-
-                    <div class="popup-left">
-                        <div class="popup-icon">
-                            <i id="popupIcon"></i>
-                        </div>
-
-                        <span class="popup-number" id="popupNumber"></span>
-                        <h2 id="popupTitle"></h2>
-                        <p id="popupDescription"></p>
-
-                        <div class="popup-tech" id="popupTech"></div>
-                    </div>
-
-                    <div class="popup-right">
-                        <span class="popup-small-heading">
-                            WHAT WE OFFER
-                        </span>
-
-                        <h3>Everything you need to grow digitally.</h3>
-
-                        <ul id="popupList"></ul>
-
-                        <button class="schedule-btn">
-                            Schedule Meeting
-                            <i class="ri-arrow-up-right-line"></i>
-                        </button>
-                    </div>
-
-                </div>
-            </div>
-
-            </section>
-
-
-
+          </div>
 
         </div>
 
+        <!-- Replace this placeholder team photo -->
+        <img class="team-image"
+          src="assets/images/team img (1).jpg"
+          alt="A team collaborating around a table" loading="lazy">
 
-    </div>
+      </div>
 
+    </section>
 
+  </main>
 
+  <!-- Placeholder dialog for sections that have not been added yet -->
+  <dialog class="info-dialog" id="info-dialog" aria-labelledby="dialog-title">
+    <button class="dialog-close" type="button" aria-label="Close dialog">
+      ×
+    </button>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
-        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
-        integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <h2 id="dialog-title"></h2>
 
-    <script src="script.js"></script>
-    <script src="cursor.js"></script>
+    <p>
+      Add your content or connect this button to the relevant page.
+    </p>
+  </dialog>
+
+  <script src="script.js"></script>
 </body>
 
 </html>
