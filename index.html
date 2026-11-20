@@ -1,71 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Ekora Infotech</title>
 
-  <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link
-  href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
-  rel="stylesheet"
->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Abel&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Remix Icons -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css"
+    rel="stylesheet"
+  >
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <main>
 
-    <!-- SECTION 1: HERO -->
+    <!-- ================= HERO ================= -->
     <section class="hero" id="home">
 
-      <!-- Replace this source with your background video -->
-      <video class="hero-video" id="hero-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
-        <source src="assets/video/hero-compressed.mp4" type="video/mp4">
+      <video
+        class="hero-video"
+        id="hero-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        aria-hidden="true"
+      >
+        <source
+          src="assets/video/hero-compressed.mp4"
+          type="video/mp4"
+        >
       </video>
 
-      <div class="hero-overlay"></div>
+      <div class="hero-overlay" aria-hidden="true"></div>
 
-      <!-- HEADER -->
+      <!-- Header -->
       <header class="header">
 
-        <!-- Replace this text mark with your logo image if needed -->
         <a class="logo" href="#home" aria-label="Ekora home">
-          <img src="assets/images/ekoralogo.png" alt="">
+          <img
+            src="assets/images/ekoralogo.png"
+            alt="Ekora Infotech"
+          >
         </a>
 
-        <nav class="glass-menu" id="main-menu" aria-label="Main navigation">
-          <a href="#home" class="active" aria-current="location">HOME</a>
+        <nav
+          class="glass-menu"
+          id="main-menu"
+          aria-label="Main navigation"
+        >
+          <a href="#home" class="active" aria-current="location">
+            HOME
+          </a>
+
           <a href="#about">ABOUT</a>
           <a href="#pricing">PRICING</a>
           <a href="feature">FEATURES</a>
-          <a href="faq">FAQ</a>
+          <a href="#faq">FAQ</a>
         </nav>
 
         <div class="header-actions">
-          <button class="button quote-button" data-dialog="Get a Quote">
+          <button
+            class="button quote-button"
+            type="button"
+            data-dialog="Get a Quote"
+          >
             Get a Quote
           </button>
 
-          <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"
-            aria-controls="main-menu">
-            <span></span>
-            <span></span>
-            <span></span>
+          <button
+            class="menu-toggle"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="main-menu"
+          >
+            <i
+              class="ri-menu-line menu-open-icon"
+              aria-hidden="true"
+            ></i>
+
+            <i
+              class="ri-close-line menu-close-icon"
+              aria-hidden="true"
+            ></i>
           </button>
         </div>
 
       </header>
 
-      <div class="hero-watermark" aria-hidden="true">EKORA</div>
+      <div class="hero-watermark" aria-hidden="true">
+        EKORA
+      </div>
 
       <div class="hero-content">
 
-        <!-- Left content -->
+        <!-- Left Content -->
         <div class="hero-left">
           <h1>
             The future of <br>
@@ -73,7 +118,6 @@
             experience
           </h1>
 
-          <!-- Reference statistics: replace with verified business data -->
           <div class="reviews">
             <div class="review-avatars" aria-hidden="true">
               <img src="assets/images/review img 1.jpg" alt="">
@@ -82,22 +126,30 @@
             </div>
 
             <div class="review-content">
-              <div class="stars" aria-hidden="true">★★★★★</div>
+              <div class="stars" aria-hidden="true">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+              </div>
+
               <p>4.5 Average ratings from 1200+ Clients</p>
             </div>
           </div>
         </div>
 
-        <!-- Center image -->
+        <!-- Center Visual -->
         <div class="hero-visual">
           <div class="phone">
-
-
             <div class="phone-status" aria-hidden="true">
               <span>9:41</span>
-              <span>••• ▰</span>
+
+              <span class="phone-status-icons">
+                <i class="ri-signal-wifi-fill"></i>
+                <i class="ri-battery-fill"></i>
+              </span>
             </div>
-           
           </div>
 
           <span class="floating-tag tag-marketing">
@@ -113,31 +165,37 @@
           </span>
         </div>
 
-        <!-- Right content -->
+        <!-- Right Content -->
         <div class="hero-right">
           <p>
-            Redefines what a music app can be—transforming passive listening into an immersive, interactive
-            experience.
+            Redefines what a music app can be—transforming passive
+            listening into an immersive, interactive experience.
           </p>
 
-          <button class="button" data-dialog="Start Free Trial">
+          <button
+            class="button"
+            type="button"
+            data-dialog="Start Free Trial"
+          >
             Start Free Trial
           </button>
         </div>
 
       </div>
-
     </section>
 
-    <!-- SECTION 2: ABOUT -->
-    <section class="about" id="about" aria-labelledby="about-heading">
-
+    <!-- ================= ABOUT ================= -->
+    <section
+      class="about"
+      id="about"
+      aria-labelledby="about-heading"
+    >
       <div class="about-top">
 
         <div class="about-description">
           <p class="section-label">
             <span aria-hidden="true"></span>
-            About
+            About/
           </p>
 
           <p class="about-copy">
@@ -146,15 +204,21 @@
             experience.
           </p>
 
-          <button class="button about-button" data-dialog="About Us">
+          <button
+            class="button about-button"
+            type="button"
+            data-dialog="About Us"
+          >
             About us
           </button>
         </div>
 
         <h2 id="about-heading">
-          Boring music apps? <span> Outta here!
-          Nebula spins your sound into
-          next-gen magic! </span>
+          Boring music apps?
+          <span>
+            Outta here! Nebula spins your sound into
+            next-gen magic!
+          </span>
         </h2>
 
       </div>
@@ -162,13 +226,13 @@
       <div class="about-bottom">
 
         <div class="about-left">
-
-          <!-- Replace this placeholder portrait -->
-          <img class="portrait-image"
+          <img
+            class="portrait-image"
             src="assets/images/team img (2).jpg"
-            alt="Portrait of a smiling man" loading="lazy">
+            alt="Portrait of a smiling man"
+            loading="lazy"
+          >
 
-          <!-- Replace these reference statistics with verified values -->
           <div class="statistics">
 
             <div class="stat">
@@ -187,24 +251,622 @@
             </div>
 
           </div>
+        </div>
+
+        <img
+          class="team-image"
+          src="assets/images/team img (1).jpg"
+          alt="A team collaborating around a table"
+          loading="lazy"
+        >
+
+      </div>
+    </section>
+
+    <!-- ================= SERVICES ================= -->
+    <section
+      class="services-section"
+      id="services"
+      aria-labelledby="services-heading"
+    >
+      <div class="services-container">
+
+        <header class="services-header">
+          <p class="services-label section-label">
+            <span aria-hidden="true"></span>
+            Our Services/
+          </p>
+
+          <h2 id="services-heading">
+            Boring music apps?
+            <span>
+              Outta here! Nebula spins your sound into next-gen magic!
+            </span>
+          </h2>
+
+          <p class="services-intro about-copy">
+            Redefines what a music app can be— transforming passive
+            listening into an immersive, interactive experience.
+          </p>
+        </header>
+
+        <!-- Generated by your existing services.js -->
+        <div class="services-list" id="services-list"></div>
+
+        <div class="all-service-btn">
+          <a class="button" href="serivce.html">
+            Explore all Services
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= PROJECTS ================= -->
+    <section
+      class="projects-section"
+      id="projects"
+      aria-labelledby="projects-heading"
+    >
+      <div class="projects-container">
+
+        <header class="projects-header">
+          <div class="projects-heading-group">
+            <p class="projects-label section-label">
+              <span aria-hidden="true"></span>
+              Our Projects/
+            </p>
+
+            <h2 id="projects-heading">
+              Explore the voices of our<br>
+              <span>satisfied clients.</span>
+            </h2>
+          </div>
+
+          <!-- Generated by your existing projects.js -->
+          <div
+            class="project-filters"
+            id="project-filters"
+            role="group"
+            aria-label="Filter projects by category"
+          ></div>
+        </header>
+
+        <div class="projects-slider">
+
+          <!-- Generated by your existing projects.js -->
+          <div
+            class="projects-grid"
+            id="projects-grid"
+            role="region"
+            aria-label="Scrollable projects"
+            tabindex="0"
+          ></div>
+
+          <div
+            class="projects-controls"
+            role="group"
+            aria-label="Project slider controls"
+          >
+            <button
+              class="projects-arrow"
+              id="projects-prev"
+              type="button"
+              aria-label="Show previous projects"
+              aria-controls="projects-grid"
+              disabled
+            >
+              <span class="projects-arrow-icon" aria-hidden="true">
+                <i class="ri-arrow-left-line"></i>
+              </span>
+
+              <span>Previous</span>
+            </button>
+
+            <button
+              class="projects-arrow"
+              id="projects-next"
+              type="button"
+              aria-label="Show next projects"
+              aria-controls="projects-grid"
+              disabled
+            >
+              <span>Next</span>
+
+              <span class="projects-arrow-icon" aria-hidden="true">
+                <i class="ri-arrow-right-line"></i>
+              </span>
+            </button>
+          </div>
 
         </div>
 
-        <!-- Replace this placeholder team photo -->
-        <img class="team-image"
-          src="assets/images/team img (1).jpg"
-          alt="A team collaborating around a table" loading="lazy">
+        <p
+          class="projects-status"
+          id="projects-status"
+          role="status"
+          aria-live="polite"
+          aria-atomic="true"
+        ></p>
+
+        <noscript>
+          <p>Please enable JavaScript to view our projects.</p>
+        </noscript>
 
       </div>
-
     </section>
+
+    <!-- ================= CLIENTS ================= -->
+    <section
+      class="clients-section"
+      id="clients"
+      aria-labelledby="clients-heading"
+    >
+      <div class="clients-container">
+
+        <header class="clients-header">
+          <p class="clients-intro about-copy">
+            Redefines what a music app can be—transforming passive
+            listening into an immersive, interactive experience.
+          </p>
+
+          <div class="clients-heading-group">
+            <p class="clients-label section-label">
+              <span aria-hidden="true"></span>
+              Clients Say!
+            </p>
+
+            <h2 id="clients-heading">
+              Explore the voices of our<br>
+              <span>satisfied clients.</span>
+            </h2>
+          </div>
+        </header>
+
+        <!-- Generated by your existing clients.js -->
+        <div
+          class="clients-grid"
+          id="clients-grid"
+          role="region"
+          aria-label="Client testimonials. Scroll horizontally to view more."
+          tabindex="0"
+        ></div>
+
+        <noscript>
+          <p>Please enable JavaScript to view client testimonials.</p>
+        </noscript>
+
+      </div>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <section
+      class="faq-section"
+      id="faq"
+      aria-labelledby="faq-heading"
+    >
+      <div class="faq-glass-box">
+
+        <div class="faq-intro">
+          <div>
+            <p class="faq-label section-label">
+              <span aria-hidden="true"></span>
+              FAQs
+            </p>
+
+            <h2 id="faq-heading">
+              Explore the voices of our<br>
+              <span>satisfied clients.</span>
+            </h2>
+
+            <p class="faq-description">
+              Redefines what a music app can be—transforming passive
+              listening into an immersive, interactive experience.
+            </p>
+          </div>
+
+          <a class="faq-contact-button" href="#contact">
+            Still Have Question
+          </a>
+        </div>
+
+        <!-- Generated by your existing faq.js -->
+        <div class="faq-list" id="faq-list"></div>
+
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section
+      class="contact-section"
+      id="contact"
+      aria-labelledby="contact-heading"
+    >
+      <div class="contact-container">
+
+        <!-- Left Content -->
+        <div class="contact-content">
+          <div class="contact-intro">
+            <p class="contact-label section-label">
+              <span aria-hidden="true"></span>
+              Contact /
+            </p>
+
+            <h2 id="contact-heading">
+              Your next big idea.<br>
+              <span>Let’s bring it to life.</span>
+            </h2>
+
+            <p class="contact-description">
+              A bold brand, a better website or your next digital
+              campaign—let’s make it happen. Tell us what you have
+              in mind and we’ll find the right way forward.
+            </p>
+          </div>
+
+          <div class="contact-process">
+            <h3>Big things start with a conversation.</h3>
+
+            <ol class="contact-steps">
+              <li>
+                <span class="contact-step-number" aria-hidden="true">
+                  01
+                </span>
+
+                <div>
+                  <h4>Share your idea</h4>
+                  <p>
+                    Tell us what you’re building and where you want to go.
+                  </p>
+                </div>
+              </li>
+
+              <li>
+                <span class="contact-step-number" aria-hidden="true">
+                  02
+                </span>
+
+                <div>
+                  <h4>Find the right direction</h4>
+                  <p>
+                    We’ll explore the services and scope that fit your goals.
+                  </p>
+                </div>
+              </li>
+
+              <li>
+                <span class="contact-step-number" aria-hidden="true">
+                  03
+                </span>
+
+                <div>
+                  <h4>Get your custom quote</h4>
+                  <p>A clear proposal for your next digital move.</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- Right Form -->
+        <div class="contact-form-panel">
+          <h3>Tell us about your project</h3>
+
+          <p class="contact-form-caption">
+            A few details to get started. <span>*</span>Required fields
+          </p>
+
+          <form
+            class="contact-form"
+            id="contact-form"
+            data-endpoint=""
+          >
+            <div class="contact-form-grid">
+
+              <div class="contact-field">
+                <label for="contact-name">
+                  Full name <span>*</span>
+                </label>
+
+                <input
+                  type="text"
+                  id="contact-name"
+                  name="name"
+                  placeholder="Your name"
+                  autocomplete="name"
+                  maxlength="100"
+                  required
+                >
+              </div>
+
+              <div class="contact-field">
+                <label for="contact-email">
+                  Email address <span>*</span>
+                </label>
+
+                <input
+                  type="email"
+                  id="contact-email"
+                  name="email"
+                  placeholder="you@company.com"
+                  autocomplete="email"
+                  maxlength="254"
+                  required
+                >
+              </div>
+
+              <div class="contact-field">
+                <label for="contact-company">Company (optional)</label>
+
+                <input
+                  type="text"
+                  id="contact-company"
+                  name="company"
+                  placeholder="Your company"
+                  autocomplete="organization"
+                  maxlength="150"
+                >
+              </div>
+
+              <div class="contact-field">
+                <label for="contact-website">Website (optional)</label>
+
+                <input
+                  type="url"
+                  id="contact-website"
+                  name="website"
+                  placeholder="https://yourwebsite.com"
+                  autocomplete="url"
+                >
+              </div>
+
+              <div class="contact-field contact-field-full">
+                <label for="contact-service">
+                  What can we help with? <span>*</span>
+                </label>
+
+                <div class="contact-select-wrap">
+                  <select id="contact-service" name="service" required>
+                    <option value="" disabled selected>Select a service</option>
+                    <option value="web-development">Web Development</option>
+                    <option value="mobile-apps">Mobile App Development</option>
+                    <option value="custom-software">Custom Software</option>
+                    <option value="branding">Branding &amp; Identity</option>
+                    <option value="digital-marketing">Digital Marketing</option>
+                    <option value="creative-design">Creative Design</option>
+                    <option value="other">Other</option>
+                  </select>
+
+                  <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+                </div>
+              </div>
+
+              <div class="contact-field">
+                <label for="contact-budget">Budget (optional)</label>
+
+                <input
+                  type="text"
+                  id="contact-budget"
+                  name="budget"
+                  placeholder="Your estimated budget"
+                  maxlength="100"
+                >
+              </div>
+
+              <div class="contact-field">
+                <label for="contact-timeline">Timeline (optional)</label>
+
+                <div class="contact-select-wrap">
+                  <select id="contact-timeline" name="timeline">
+                    <option value="">When would you like to start?</option>
+                    <option value="asap">As soon as possible</option>
+                    <option value="1-month">Within a month</option>
+                    <option value="1-3-months">Within 1–3 months</option>
+                    <option value="flexible">My timeline is flexible</option>
+                  </select>
+
+                  <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+                </div>
+              </div>
+
+              <div class="contact-field contact-field-full">
+                <label for="contact-message">
+                  Project details <span>*</span>
+                </label>
+
+                <textarea
+                  id="contact-message"
+                  name="message"
+                  rows="5"
+                  placeholder="Tell us about your idea, your goals and what you need."
+                  maxlength="5000"
+                  required
+                ></textarea>
+              </div>
+
+            </div>
+
+            <label class="contact-consent" for="contact-consent">
+              <input
+                type="checkbox"
+                id="contact-consent"
+                name="consent"
+                value="yes"
+                required
+              >
+
+              <span>
+                I agree to be contacted by EKORA about this enquiry.
+              </span>
+            </label>
+
+            <div class="contact-submit-row">
+              <button
+                class="contact-submit-button"
+                id="contact-submit"
+                type="submit"
+              >
+                <span>Get a Quote</span>
+
+                <span class="contact-submit-icon" aria-hidden="true">
+                  <i class="ri-arrow-right-up-line"></i>
+                </span>
+              </button>
+
+              <p>Your idea. Our expertise. Let’s find your next move.</p>
+            </div>
+
+            <p
+              class="contact-form-status"
+              id="contact-form-status"
+              role="status"
+              aria-live="polite"
+              aria-atomic="true"
+            ></p>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="blank-section" id="blank-area"></section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="site-footer">
+      <div class="footer-container">
+
+        <div class="footer-top">
+
+          <div class="footer-brand-card">
+            <a href="#home" class="footer-logo" aria-label="Ekora home">
+              <img
+                src="assets/images/ekoralogo.png"
+                alt="Ekora Infotech"
+                loading="lazy"
+              >
+            </a>
+
+            <p class="footer-brand-description">
+              Redefines what a music app can be—transforming passive
+              listening into an immersive, interactive experience.
+            </p>
+
+            <!-- Add your actual social profile URLs here -->
+            <div class="footer-socials" aria-label="Social media">
+              <a
+                href="https://www.facebook.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook (opens in a new tab)"
+              >
+                <i class="ri-facebook-circle-fill" aria-hidden="true"></i>
+              </a>
+
+              <a
+                href="https://x.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="X (opens in a new tab)"
+              >
+                <i class="ri-twitter-x-fill" aria-hidden="true"></i>
+              </a>
+
+              <a
+                href="https://www.linkedin.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn (opens in a new tab)"
+              >
+                <i class="ri-linkedin-box-fill" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <nav class="footer-navigation" aria-label="Footer navigation">
+
+            <div class="footer-column">
+              <h3>Quick Links</h3>
+
+              <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#services">Services</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-column">
+              <h3>Services</h3>
+
+              <ul>
+                <li><a href="#services">Web Development</a></li>
+                <li><a href="#services">Digital Marketing</a></li>
+                <li><a href="#services">Branding</a></li>
+                <li><a href="#services">Logo Design</a></li>
+                <li><a href="#services">Creative Design</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-column">
+              <h3>Resources</h3>
+
+              <ul>
+                <li><a href="#clients">Customer Stories</a></li>
+                <li><a href="#projects">Our Work</a></li>
+                <li><a href="#faq">FAQs</a></li>
+                <li><a href="#contact">Get a Quote</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-column">
+              <h3>Information</h3>
+
+              <ul>
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+
+                <li>
+                  <a href="terms-and-conditions.html">
+                    Terms &amp; Conditions
+                  </a>
+                </li>
+
+                <li><a href="#about">About Ekora</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+              </ul>
+            </div>
+
+          </nav>
+        </div>
+
+        <div class="footer-bottom">
+          <p class="footer-copyright">
+            © <span id="footer-year">2026</span> EKORA INFOTECH.
+            All rights reserved.
+          </p>
+
+          <div class="footer-watermark" aria-hidden="true">
+            EKORA
+          </div>
+        </div>
+
+      </div>
+    </footer>
 
   </main>
 
-  <!-- Placeholder dialog for sections that have not been added yet -->
-  <dialog class="info-dialog" id="info-dialog" aria-labelledby="dialog-title">
-    <button class="dialog-close" type="button" aria-label="Close dialog">
-      ×
+  <!-- Existing Dialog -->
+  <dialog
+    class="info-dialog"
+    id="info-dialog"
+    aria-labelledby="dialog-title"
+  >
+    <button
+      class="dialog-close"
+      type="button"
+      aria-label="Close dialog"
+    >
+      <i class="ri-close-line" aria-hidden="true"></i>
     </button>
 
     <h2 id="dialog-title"></h2>
@@ -214,7 +876,11 @@
     </p>
   </dialog>
 
+  <!-- Your existing JavaScript files -->
   <script src="script.js"></script>
+  <script src="services.js"></script>
+  <script src="projects.js"></script>
+  <script src="clients.js"></script>
+  <script src="faq.js"></script>
 </body>
-
 </html>
