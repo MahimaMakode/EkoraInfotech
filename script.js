@@ -231,3 +231,148 @@ dialog.addEventListener("click", (event) => {
     dialog.close();
   }
 });
+
+
+
+
+// contact section
+
+
+
+(() => {
+  "use strict";
+
+  function initializeContactForm() {
+    const form = document.getElementById("contact-form");
+    const submitButton = document.getElementById("contact-submit");
+    const status = document.getElementById("contact-form-status");
+
+    if (!form || !submitButton || !status) return;
+    if (form.dataset.initialized === "true") return;
+
+    form.dataset.initialized = "true";
+
+    const nameInput = form.elements.namedItem("name");
+    const messageInput = form.elements.namedItem("message");
+    const buttonLabel = submitButton.querySelector("span");
+
+    const requiredTextFields = [
+      {
+        input: nameInput,
+        message: "Please enter your name."
+      },
+      {
+        input: messageInput,
+        message: "Please describe your project."
+      }
+    ];
+
+    function validateTextField(field) {
+      field.input.setCustomValidity(
+        field.input.value.trim() ? "" : field.message
+      );
+    }
+
+    requiredTextFields.forEach((field) => {
+      field.input.addEventListener("input", () => {
+        validateTextField(field);
+      });
+    });
+
+    let submitting = false;
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      if (submitting) return;
+
+      requiredTextFields.forEach(validateTextField);
+
+      if (!form.reportValidity()) return;
+
+      const endpoint = form.dataset.endpoint.trim();
+
+      // Do not claim that a message was sent without a backend.
+      if (!endpoint) {
+        status.textContent =
+          "This form is not connected yet. Your enquiry has not been sent.";
+        return;
+      }
+
+      const payload = Object.fromEntries(new FormData(form).entries());
+
+      Object.keys(payload).forEach((key) => {
+        if (typeof payload[key] === "string") {
+          payload[key] = payload[key].trim();
+        }
+      });
+
+      payload.consent = payload.consent === "yes";
+
+      submitting = true;
+      submitButton.disabled = true;
+      buttonLabel.textContent = "Sending…";
+      form.setAttribute("aria-busy", "true");
+      status.textContent = "";
+
+      const controller = new AbortController();
+      const timeout = window.setTimeout(() => {
+        controller.abort();
+      }, 20000);
+
+      try {
+        // Expected API response: { "success": true }
+        const response = await fetch(endpoint, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify(payload),
+          signal: controller.signal
+        });
+
+        if (!response.ok) {
+          throw new Error("Submission failed.");
+        }
+
+        const result = await response.json();
+
+        if (result.success !== true) {
+          throw new Error("Submission was not confirmed.");
+        }
+
+        status.textContent =
+          "Thank you! Your enquiry has been submitted successfully.";
+
+        form.reset();
+
+        requiredTextFields.forEach((field) => {
+          field.input.setCustomValidity("");
+        });
+      } catch (error) {
+        status.textContent =
+          error.name === "AbortError"
+            ? "The request timed out. We could not confirm your submission."
+            : "We could not confirm your submission. Please try again later.";
+      } finally {
+        window.clearTimeout(timeout);
+
+        submitting = false;
+        submitButton.disabled = false;
+        buttonLabel.textContent = "Get a Quote";
+        form.removeAttribute("aria-busy");
+      }
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener(
+      "DOMContentLoaded",
+      initializeContactForm,
+      { once: true }
+    );
+  } else {
+    initializeContactForm();
+  }
+})();
