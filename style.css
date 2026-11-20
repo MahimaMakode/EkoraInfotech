@@ -1076,7 +1076,7 @@ i[class*=" ri-"] {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 5px;
   padding: 8px 10px;
   -webkit-appearance: none;
   appearance: none;
@@ -1833,7 +1833,7 @@ i[class*=" ri-"] {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 22px;
+  gap: 5px;
   flex-shrink: 0;
   min-height: 44px;
   padding: 12px 18px;
