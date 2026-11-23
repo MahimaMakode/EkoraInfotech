@@ -769,3 +769,140 @@ display: flex;
 .button:hover .about-arrow-icon i {
   transform: translate(3px, -3px);
 }
+
+
+
+/* Tablet, laptop and desktop */
+@media (min-width: 521px) {
+  .hero > .container {
+    width: min(1312px, calc(100% - 48px));
+    margin-inline: auto;
+  }
+
+  .hero .hero-grid {
+    min-height: 0;
+    height: auto;
+    overflow: visible;
+  }
+
+  .hero .hero-copy,
+  .hero .hero-media {
+    min-width: 0;
+  }
+
+  .hero .hero-media {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    padding-bottom: clamp(80px, 8vw, 110px);
+    isolation: isolate;
+  }
+
+  /* Main image determines the media area's height */
+  .hero .hero-main-image {
+    position: relative;
+    inset: auto;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 1.35 / 1;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+
+  /* Inset image scales with its parent */
+  .hero .hero-inset-image {
+    position: absolute;
+    inset: auto;
+    left: -8%;
+    bottom: 0;
+    z-index: 2;
+
+    width: 54%;
+    max-width: 306px;
+    height: auto;
+    aspect-ratio: 306 / 196;
+
+    object-fit: cover;
+    border: 6px solid #05060c;
+    border-radius: 14px;
+  }
+
+  .hero .image-note {
+    position: absolute;
+    inset: auto;
+    right: 0;
+    bottom: 14px;
+    z-index: 3;
+
+    width: 50%;
+    max-width: 311px;
+    height: auto;
+    min-height: 58px;
+    padding: 12px 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: clamp(11px, 1vw, 13px);
+    line-height: 1.4;
+    text-align: center;
+  }
+}
+
+/* Laptop and desktop */
+@media (min-width: 821px) {
+  .hero .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(40px, 5vw, 80px);
+
+    padding: 50px 0 45px;
+  }
+
+  .hero .hero-copy {
+    padding-top: 0;
+  }
+
+  .hero .hero-media {
+    align-self: center;
+    margin: 0;
+  }
+}
+
+/* Tablet */
+@media (min-width: 521px) and (max-width: 820px) {
+  .hero > .container {
+    max-width: 680px;
+  }
+
+  .hero .hero-grid {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .hero .hero-media {
+    width: 100%;
+    margin-top: 40px;
+    padding-bottom: 85px;
+  }
+
+  .hero .hero-main-image {
+    aspect-ratio: 1.5 / 1;
+  }
+
+  .hero .hero-inset-image {
+    left: 0;
+    width: 46%;
+  }
+
+  .hero .image-note {
+    right: 0;
+    width: 50%;
+  }
+}
