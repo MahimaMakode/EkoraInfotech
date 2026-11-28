@@ -1,0 +1,10 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="1331" height="109" viewBox="0 0 1331 109" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path id="Wave ambient outline" opacity="0.1" d="M9.5 63.5C61.5 63.5 70.5 9.5 145.5 9.5C315.5 9.5 315.5 99.5 485.5 99.5C655.5 99.5 655.5 9.5 825.5 9.5C995.5 9.5 995.5 99.5 1165.5 99.5C1245.5 99.5 1275.5 51.5 1321.5 51.5" stroke-width="19" stroke-linecap="round" stroke="url(#paint0_linear_0_7)"/>
+<defs>
+<linearGradient id="paint0_linear_0_7" x1="9.5" y1="54.5" x2="1321.5" y2="54.5" gradientUnits="userSpaceOnUse">
+<stop stop-color="#478CFF"/>
+<stop offset="0.5" stop-color="#8E61FF"/>
+<stop offset="1" stop-color="#B49AFF"/>
+</linearGradient>
+</defs>
+</svg>

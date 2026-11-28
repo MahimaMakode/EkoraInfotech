@@ -1,0 +1,10 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="1316" height="94" viewBox="0 0 1316 94" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path id="Wave connector" d="M2 56C54 56 63 2 138 2C308 2 308 92 478 92C648 92 648 2 818 2C988 2 988 92 1158 92C1238 92 1268 44 1314 44" stroke-width="4" stroke-linecap="round" stroke="url(#paint0_linear_0_6)"/>
+<defs>
+<linearGradient id="paint0_linear_0_6" x1="2" y1="47" x2="1314" y2="47" gradientUnits="userSpaceOnUse">
+<stop stop-color="#478CFF"/>
+<stop offset="0.5" stop-color="#8E61FF"/>
+<stop offset="1" stop-color="#B49AFF"/>
+</linearGradient>
+</defs>
+</svg>
