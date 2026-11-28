@@ -5,6 +5,7 @@ const menuToggle = document.querySelector(".menu-toggle");
 const compactNavigation = window.matchMedia("(max-width: 800px)");
 
 function closeMenu(returnFocus = false) {
+  if (!menu || !menuToggle) return;
   menu.classList.remove("open");
   menuToggle.setAttribute("aria-expanded", "false");
   menuToggle.setAttribute("aria-label", "Open menu");
@@ -14,57 +15,61 @@ function closeMenu(returnFocus = false) {
   }
 }
 
-menuToggle.addEventListener("click", () => {
-  const isOpen = menu.classList.toggle("open");
+if (menu && menuToggle) {
+  menu.dataset.navInitialized = "true";
 
-  menuToggle.setAttribute("aria-expanded", String(isOpen));
-  menuToggle.setAttribute(
-    "aria-label",
-    isOpen ? "Close menu" : "Open menu"
-  );
-});
+  menuToggle.addEventListener("click", () => {
+    const isOpen = menu.classList.toggle("open");
 
-menu.addEventListener("click", (event) => {
-  if (event.target.closest("a, button")) {
-    closeMenu();
-  }
-});
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    menuToggle.setAttribute(
+      "aria-label",
+      isOpen ? "Close menu" : "Open menu"
+    );
+  });
 
-document.addEventListener("click", (event) => {
-  const clickedMenu = menu.contains(event.target);
-  const clickedToggle = menuToggle.contains(event.target);
+  menu.addEventListener("click", (event) => {
+    if (event.target.closest("a, button")) {
+      closeMenu();
+    }
+  });
 
-  if (!clickedMenu && !clickedToggle) {
-    closeMenu();
-  }
-});
+  document.addEventListener("click", (event) => {
+    const clickedMenu = menu.contains(event.target);
+    const clickedToggle = menuToggle.contains(event.target);
 
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape" && menu.classList.contains("open")) {
-    closeMenu(true);
-  }
-});
+    if (!clickedMenu && !clickedToggle) {
+      closeMenu();
+    }
+  });
 
-document.addEventListener("focusin", (event) => {
-  if (
-    compactNavigation.matches &&
-    menu.classList.contains("open") &&
-    !menu.contains(event.target) &&
-    !menuToggle.contains(event.target)
-  ) {
-    closeMenu();
-  }
-});
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && menu.classList.contains("open")) {
+      closeMenu(true);
+    }
+  });
 
-compactNavigation.addEventListener("change", (event) => {
-  if (!event.matches) {
-    closeMenu();
-  }
-});
+  document.addEventListener("focusin", (event) => {
+    if (
+      compactNavigation.matches &&
+      menu.classList.contains("open") &&
+      !menu.contains(event.target) &&
+      !menuToggle.contains(event.target)
+    ) {
+      closeMenu();
+    }
+  });
+
+  compactNavigation.addEventListener("change", (event) => {
+    if (!event.matches) {
+      closeMenu();
+    }
+  });
+}
 
 // Active section tracking
 
-const sectionLinks = [...menu.querySelectorAll('a[href^="#"]')];
+const sectionLinks = menu ? [...menu.querySelectorAll('a[href^="#"]')] : [];
 
 const linkedSections = sectionLinks
   .map((link) => ({
@@ -127,73 +132,78 @@ const reducedMotion = window.matchMedia(
   "(prefers-reduced-motion: reduce)"
 );
 
-let playbackRequested = !reducedMotion.matches;
-let videoAvailable = false;
+if (video) {
+  let playbackRequested = !reducedMotion.matches;
+  let videoAvailable = false;
 
-video.muted = true;
-video.autoplay = playbackRequested;
+  video.muted = true;
+  video.autoplay = playbackRequested;
 
-function updateVideoButton() {
-  motionButton.textContent = video.paused ? "▷" : "Ⅱ";
-  motionButton.setAttribute(
-    "aria-label",
-    video.paused ? "Play background video" : "Pause background video"
-  );
-}
-
-function applyPlaybackPreference() {
-  if (!playbackRequested || document.hidden) {
-    video.pause();
-  } else if (videoAvailable) {
-    video.play().catch(updateVideoButton);
+  function updateVideoButton() {
+    if (!motionButton) return;
+    motionButton.textContent = video.paused ? "▷" : "Ⅱ";
+    motionButton.setAttribute(
+      "aria-label",
+      video.paused ? "Play background video" : "Pause background video"
+    );
   }
 
-  updateVideoButton();
-}
+  function applyPlaybackPreference() {
+    if (!playbackRequested || document.hidden) {
+      video.pause();
+    } else if (videoAvailable) {
+      video.play().catch(updateVideoButton);
+    }
 
-function handleVideoReady() {
-  videoAvailable = true;
-  video.classList.add("is-ready");
-  motionButton.hidden = false;
-  applyPlaybackPreference();
-}
+    updateVideoButton();
+  }
 
-function handleVideoError() {
-  videoAvailable = false;
-  video.classList.remove("is-ready");
-  motionButton.hidden = true;
-}
+  function handleVideoReady() {
+    videoAvailable = true;
+    video.classList.add("is-ready");
+    if (motionButton) motionButton.hidden = false;
+    applyPlaybackPreference();
+  }
 
-video.addEventListener("loadeddata", handleVideoReady);
-video.addEventListener("play", updateVideoButton);
-video.addEventListener("pause", updateVideoButton);
-video.addEventListener("error", handleVideoError);
+  function handleVideoError() {
+    videoAvailable = false;
+    video.classList.remove("is-ready");
+    if (motionButton) motionButton.hidden = true;
+  }
 
-video.querySelector("source")?.addEventListener(
-  "error",
-  handleVideoError
-);
+  video.addEventListener("loadeddata", handleVideoReady);
+  video.addEventListener("play", updateVideoButton);
+  video.addEventListener("pause", updateVideoButton);
+  video.addEventListener("error", handleVideoError);
 
-motionButton.addEventListener("click", () => {
-  playbackRequested = video.paused;
-  applyPlaybackPreference();
-});
+  video.querySelector("source")?.addEventListener(
+    "error",
+    handleVideoError
+  );
 
-reducedMotion.addEventListener("change", (event) => {
-  playbackRequested = !event.matches;
-  video.autoplay = playbackRequested;
-  applyPlaybackPreference();
-});
+  if (motionButton) {
+    motionButton.addEventListener("click", () => {
+      playbackRequested = video.paused;
+      applyPlaybackPreference();
+    });
+  }
 
-document.addEventListener(
-  "visibilitychange",
-  applyPlaybackPreference
-);
+  reducedMotion.addEventListener("change", (event) => {
+    playbackRequested = !event.matches;
+    video.autoplay = playbackRequested;
+    applyPlaybackPreference();
+  });
 
-if (video.readyState >= 2) {
-  handleVideoReady();
-} else {
-  applyPlaybackPreference();
+  document.addEventListener(
+    "visibilitychange",
+    applyPlaybackPreference
+  );
+
+  if (video.readyState >= 2) {
+    handleVideoReady();
+  } else {
+    applyPlaybackPreference();
+  }
 }
 
 // Placeholder dialogs
@@ -202,35 +212,39 @@ const dialog = document.querySelector("#info-dialog");
 const dialogTitle = document.querySelector("#dialog-title");
 const dialogClose = document.querySelector(".dialog-close");
 
-document.querySelectorAll("[data-dialog]").forEach((button) => {
-  button.addEventListener("click", () => {
-    dialogTitle.textContent = button.dataset.dialog;
+if (dialog && dialogTitle) {
+  document.querySelectorAll("[data-dialog]").forEach((button) => {
+    button.addEventListener("click", () => {
+      dialogTitle.textContent = button.dataset.dialog;
 
-    if (!dialog.open) {
-      dialog.showModal();
+      if (!dialog.open) {
+        dialog.showModal();
+      }
+    });
+  });
+
+  if (dialogClose) {
+    dialogClose.addEventListener("click", () => {
+      dialog.close();
+    });
+  }
+
+  dialog.addEventListener("click", (event) => {
+    if (event.target !== dialog) return;
+
+    const bounds = dialog.getBoundingClientRect();
+
+    const outside =
+      event.clientX < bounds.left ||
+      event.clientX > bounds.right ||
+      event.clientY < bounds.top ||
+      event.clientY > bounds.bottom;
+
+    if (outside) {
+      dialog.close();
     }
   });
-});
-
-dialogClose.addEventListener("click", () => {
-  dialog.close();
-});
-
-dialog.addEventListener("click", (event) => {
-  if (event.target !== dialog) return;
-
-  const bounds = dialog.getBoundingClientRect();
-
-  const outside =
-    event.clientX < bounds.left ||
-    event.clientX > bounds.right ||
-    event.clientY < bounds.top ||
-    event.clientY > bounds.bottom;
-
-  if (outside) {
-    dialog.close();
-  }
-});
+}
 
 
 
@@ -379,299 +393,6 @@ dialog.addEventListener("click", (event) => {
 
 
 
-// Service page js 
-
-"use strict";
-
-document.documentElement.classList.add("js");
-
-/* ==================================================
-   Service Data
-================================================== */
-
-const services = [
-  {
-    number: "01",
-    category: "Development",
-    title: "Web Development",
-    description:
-      "Responsive websites that make every first impression count.",
-    tags: "BUSINESS WEBSITES / CMS",
-    image: "11973.png"
-  },
-  {
-    number: "02",
-    category: "Development",
-    title: "Mobile App Development",
-    description:
-      "Intuitive mobile experiences for people on the move.",
-    tags: "iOS & ANDROID / CROSS-PLATFORM",
-    image: "1ec4e.png"
-  },
-  {
-    number: "03",
-    category: "Development",
-    title: "Custom Software",
-    description:
-      "Purpose-built tools for smoother, smarter workflows.",
-    tags: "BUSINESS TOOLS / INTEGRATIONS",
-    image: "04d45.png"
-  },
-  {
-    number: "04",
-    category: "Development",
-    title: "E-commerce Solutions",
-    description:
-      "Seamless shopping experiences, from discovery to checkout.",
-    tags: "ONLINE STORES / PAYMENTS",
-    image: "e7fd1.png"
-  },
-  {
-    number: "05",
-    category: "Design",
-    title: "Branding & Identity",
-    description:
-      "A distinctive identity that feels unmistakably yours.",
-    tags: "STRATEGY / VISUAL IDENTITY",
-    image: "12ac5.png"
-  },
-  {
-    number: "06",
-    category: "Design",
-    title: "Creative Design",
-    description:
-      "Compelling visuals that bring your brand story to life.",
-    tags: "DIGITAL CREATIVES / PRINT",
-    image: "73761.png"
-  },
-  {
-    number: "07",
-    category: "Design",
-    title: "UI/UX Design",
-    description:
-      "Human-centred interfaces that look good and feel effortless.",
-    tags: "RESEARCH / WIREFRAMES / UI",
-    image: "52709.png"
-  },
-  {
-    number: "08",
-    category: "Design",
-    title: "Logo Design",
-    description:
-      "A memorable mark, designed to make your brand stand out.",
-    tags: "CUSTOM MARKS / LOGO SYSTEMS",
-    image: "49d31.png"
-  },
-  {
-    number: "09",
-    category: "Marketing",
-    title: "Digital Marketing",
-    description:
-      "A connected digital strategy to reach the right audience.",
-    tags: "STRATEGY / CAMPAIGNS",
-    image: "4ff52.png"
-  },
-  {
-    number: "10",
-    category: "Marketing",
-    title: "Search Engine Optimisation",
-    description:
-      "Help the right customers find you when it matters most.",
-    tags: "ON-PAGE SEO / TECHNICAL SEO",
-    image: "c8690.png"
-  },
-  {
-    number: "11",
-    category: "Marketing",
-    title: "Social Media Marketing",
-    description:
-      "Build meaningful connections with content worth sharing.",
-    tags: "CONTENT / COMMUNITY / SOCIAL",
-    image: "3d01a.png"
-  },
-  {
-    number: "12",
-    category: "Marketing",
-    title: "Paid Advertising",
-    description:
-      "Focused ad campaigns that turn attention into action.",
-    tags: "SEARCH ADS / SOCIAL ADS",
-    image: "08187.png"
-  }
-];
-
-/* ==================================================
-   Service Cards
-================================================== */
-
-const servicesGrid = document.getElementById("services-grid");
-const servicesStatus = document.getElementById("services-status");
-const filterButtons = document.querySelectorAll("[data-filter]");
-
-function createServiceCard(service) {
-  const card = document.createElement("article");
-  card.className = "service-card";
-
-  const image = document.createElement("img");
-  image.className = "service-image";
-  image.src = `assets/${service.image}`;
-  image.alt = "";
-  image.loading = "lazy";
-  image.decoding = "async";
-
-  const content = document.createElement("div");
-  content.className = "service-content";
-
-  const category = document.createElement("p");
-  category.className = "service-category";
-  category.textContent = `${service.number} / ${service.category}`;
-
-  const titleRow = document.createElement("div");
-  titleRow.className = "service-title-row";
-
-  const title = document.createElement("h3");
-  title.className = "service-title";
-  title.textContent = service.title;
-
-  const arrow = document.createElement("i");
-  arrow.className = "ri-arrow-right-up-line service-arrow";
-  arrow.setAttribute("aria-hidden", "true");
-
-  const description = document.createElement("p");
-  description.className = "service-description";
-  description.textContent = service.description;
-
-  const tags = document.createElement("p");
-  tags.className = "service-tags";
-  tags.textContent = service.tags;
-
-  titleRow.append(title, arrow);
-  content.append(category, titleRow, description, tags);
-  card.append(image, content);
-
-  return card;
-}
-
-/* ==================================================
-   Category Filters
-================================================== */
-
-function setServiceFilter(category, announce = true) {
-  if (!servicesGrid) return;
-
-  const filteredServices =
-    category === "All services"
-      ? services
-      : services.filter((service) => service.category === category);
-
-  const fragment = document.createDocumentFragment();
-
-  filteredServices.forEach((service) => {
-    fragment.append(createServiceCard(service));
-  });
-
-  servicesGrid.replaceChildren(fragment);
-
-  filterButtons.forEach((button) => {
-    button.setAttribute(
-      "aria-pressed",
-      String(button.dataset.filter === category)
-    );
-  });
-
-  if (servicesStatus && announce) {
-    servicesStatus.textContent =
-      category === "All services"
-        ? `Showing all ${filteredServices.length} services.`
-        : `Showing ${filteredServices.length} ${category.toLowerCase()} services.`;
-  }
-}
-
-filterButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    setServiceFilter(button.dataset.filter);
-  });
-});
-
-document.querySelectorAll("[data-service-category]").forEach((link) => {
-  link.addEventListener("click", () => {
-    setServiceFilter(link.dataset.serviceCategory);
-  });
-});
-
-setServiceFilter("All services", false);
-
-/* ==================================================
-   Mobile Navigation
-================================================== */
-
-const menuButton = document.querySelector(".menu-toggle");
-const mainMenu = document.getElementById("main-menu");
-const mobileViewport = window.matchMedia("(max-width: 1023px)");
-
-if (menuButton && mainMenu) {
-  const menuIcon = menuButton.querySelector("i");
-
-  menuButton.hidden = false;
-
-  function setMenuOpen(isOpen, restoreFocus = false) {
-    mainMenu.classList.toggle("is-open", isOpen);
-
-    menuButton.setAttribute("aria-expanded", String(isOpen));
-
-    menuButton.setAttribute(
-      "aria-label",
-      isOpen ? "Close menu" : "Open menu"
-    );
-
-    if (menuIcon) {
-      menuIcon.className = isOpen
-        ? "ri-close-line"
-        : "ri-menu-line";
-    }
-
-    if (restoreFocus) {
-      menuButton.focus();
-    }
-  }
-
-  menuButton.addEventListener("click", () => {
-    const isOpen =
-      menuButton.getAttribute("aria-expanded") === "true";
-
-    setMenuOpen(!isOpen);
-  });
-
-  mainMenu.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      setMenuOpen(false);
-    });
-  });
-
-  document.addEventListener("keydown", (event) => {
-    const isOpen =
-      menuButton.getAttribute("aria-expanded") === "true";
-
-    if (event.key === "Escape" && isOpen) {
-      setMenuOpen(false, true);
-    }
-  });
-
-  document.addEventListener("click", (event) => {
-    if (!(event.target instanceof Node)) return;
-
-    const clickedInsideMenu = mainMenu.contains(event.target);
-    const clickedMenuButton = menuButton.contains(event.target);
-
-    if (!clickedInsideMenu && !clickedMenuButton) {
-      setMenuOpen(false);
-    }
-  });
-
-  mobileViewport.addEventListener("change", () => {
-    setMenuOpen(false);
-  });
-}
 
 /* ==================================================
    FAQ Accordion
